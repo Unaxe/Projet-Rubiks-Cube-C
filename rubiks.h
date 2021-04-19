@@ -10,7 +10,7 @@
 
 typedef enum T_COLOR T_COLOR;
 typedef enum T_SIDE T_SIDE;
-typedef struct Face Face;
+typedef struct Square Square;
 
 int select_color(char color);
 

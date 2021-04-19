@@ -12,9 +12,9 @@ enum T_SIDE{
     FRONT , BACK, UP, DOWN, RIGHT, LEFT
 };
 
-struct Face{
+struct Square{
     T_SIDE side;
-    T_COLOR squares;
+    T_COLOR color;
 };
 
 int select_color(char color){
@@ -36,13 +36,13 @@ int select_color(char color){
     }
 }
 
-Face *** create_rubiks(){
+Square *** create_rubiks(){
     int i,j;
-    Face ***T = (Face ***)malloc(6*sizeof(Face**));
+    Square ***T = (Square ***)malloc(6*sizeof(Square**));
     for(i = 0;i<6;i++){
-        T[i] = (Face **)malloc(3*sizeof(Face*));
+        T[i] = (Square **)malloc(3*sizeof(Square*));
         for (j = 0;j<3;j++)
-            T[i][j] = (Face *)malloc(3*sizeof(Face));
+            T[i][j] = (Square *)malloc(3*sizeof(Square));
     }
 }
 
