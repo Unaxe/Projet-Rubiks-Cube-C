@@ -8,5 +8,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+typedef enum T_COLOR T_COLOR;
+typedef enum T_SIDE T_SIDE;
+typedef struct Face Face;
+
 
 #endif //PROJETC_RUBIKS_H
