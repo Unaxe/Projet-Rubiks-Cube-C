@@ -1,6 +1,6 @@
 #include "rubiks.h"
 
 int main() {
-    printf("Hello, World!\n");
+    printf("PM et Rom1\n");
     return 0;
 }
