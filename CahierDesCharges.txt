@@ -4,7 +4,7 @@
 ✔ Creation d'un pointeur de type Face (rubiks)
 
 #Fonctions pour les types enumérés
-select_color -> prends en parametre le nom d'une couleur et return la valeur numerique de la couleur
+✔select_color -> prends en parametre le nom d'une couleur et return la valeur numerique de la couleur
 side_to_index -> prends en parametre le nom d'une Face ({UP,DOWN,LEFT,RIGHT,...}) et return la place dans le tableau Rubiks de la Face
 
 #

@@ -14,7 +14,7 @@ enum T_SIDE{
 
 struct Face{
     T_SIDE side;
-    T_COLOR squares[3][3];
+    T_COLOR squares;
 };
 
 int select_color(char color){
@@ -35,3 +35,14 @@ int select_color(char color){
             return 6;
     }
 }
+
+Face *** create_rubiks(){
+    int i,j;
+    Face ***T = (Face ***)malloc(6*sizeof(Face**));
+    for(i = 0;i<6;i++){
+        T[i] = (Face **)malloc(3*sizeof(Face*));
+        for (j = 0;j<3;j++)
+            T[i][j] = (Face *)malloc(3*sizeof(Face));
+    }
+}
+
