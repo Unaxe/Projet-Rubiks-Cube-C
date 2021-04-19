@@ -4,13 +4,9 @@
 
 #include "rubiks.h"
 
-enum T_COLOR{
-    R = 0,B = 1,G = 2,W = 3,Y = 4,O = 5,LG = 6
-};
+enum T_COLOR{R = 0,B = 1,G = 2,W = 3,Y = 4,O = 5,LG = 6};
 
-enum T_SIDE{
-    FRONT , BACK, UP, DOWN, RIGHT, LEFT
-};
+enum T_SIDE{FRONT,BACK, UP, DOWN, RIGHT, LEFT};
 
 struct Square{
     T_SIDE side;
@@ -58,8 +54,6 @@ int side_to_index(char side,Square *** rubiks){
         case 'L':
             searched = LEFT;
             break;
-        default:
-            return -1;
     }
     for(i = 0; i< 6;i++){
         if(rubiks[i][0][0].side == searched)
@@ -95,46 +89,44 @@ void init_rubiks(Square **** rubiks){
             for(k = 0;k<3;k++){
                 (*rubiks)[i][j][k].color = i;
                 (*rubiks)[i][j][k].side = i;
-                printf("Check : %d %d %d\n",i,j,k);
             }
         }
     }
-    printf("End\n");
 }
 
 void color_display(int color){
     switch (color) {
-        case 0 :
-            c_textcolor(4);
+        case R :
+            c_textcolor(RED);
             printf("R");
             break;
-        case 1 :
-            c_textcolor(1);
+        case B :
+            c_textcolor(BLUE);
             printf("B");
             break;
-        case 2 :
-            c_textcolor(2);
+        case G :
+            c_textcolor(GREEN);
             printf("G");
             break;
-        case 3 :
-            c_textcolor(15);
+        case W :
+            c_textcolor(WHITE);
             printf("W");
             break;
-        case 4 :
-            c_textcolor(14);
+        case Y :
+            c_textcolor(YELLOW);
             printf("Y");
             break;
-        case 5 :
-            c_textcolor(12);
+        case O :
+            c_textcolor(LIGHTRED);
             printf("O");
             break;
-        case -1 :
+        case LG :
             c_textcolor(LIGHTGRAY);
             printf("L");
             break;
     }
+    c_textcolor(WHITE);
 }
-
 
 void display_rubiks(Square *** rubiks){
     int i,j,k;
@@ -237,5 +229,57 @@ void display_rubiks(Square *** rubiks){
     }
 }
 
+void blank_rubiks(Square **** rubiks){
+    int i,j,k;
+    for(i = 0; i<6;i++){
+        for(j = 0;j<3;j++){
+            for (k = 0; k < 3; k++) {
+                (*rubiks)[i][j][k].color = LG;
+            }
+        }
+    }
+}
 
+void FRONT_clockwise(Square **** rubiks){
+    int stock,stock2,i;
+    // Rotation du premier groupe de carrés
+    for (i = 0;i<3;i++) {
+        stock = (*rubiks)[side_to_index('D', *rubiks)][0][2-i].color; // stocker la valeur de la case D[0][2]
+        (*rubiks)[side_to_index('D', *rubiks)][0][2-i].color = (*rubiks)[side_to_index('R', *rubiks)][0+i][0].color;
+        stock2 = (*rubiks)[side_to_index('L', *rubiks)][2-i][2].color;
+        (*rubiks)[side_to_index('L', *rubiks)][2-i][2].color = stock;
+        stock = (*rubiks)[side_to_index('U', *rubiks)][2][0+i].color;
+        (*rubiks)[side_to_index('U', *rubiks)][2][0+i].color = stock2;
+        (*rubiks)[side_to_index('R', *rubiks)][0+i][0].color = stock;
+    }
+    exchangeColors(&((*rubiks)[side_to_index('F', *rubiks)][0][0]),&((*rubiks)[side_to_index('F', *rubiks)][2][2]));
+    exchangeColors(&((*rubiks)[side_to_index('F', *rubiks)][0][1]),&((*rubiks)[side_to_index('F', *rubiks)][2][1]));
+    exchangeColors(&((*rubiks)[side_to_index('F', *rubiks)][0][2]),&((*rubiks)[side_to_index('F', *rubiks)][2][0]));
+    exchangeColors(&((*rubiks)[side_to_index('F', *rubiks)][1][0]),&((*rubiks)[side_to_index('F', *rubiks)][1][2]));
+}
+
+void UP_clockwise(Square **** rubiks){
+    int stock,stock2,i;
+    // Rotation du premier groupe de carrés
+    for (i = 0;i<3;i++) {
+        stock = (*rubiks)[side_to_index('F', *rubiks)][0][2-i].color; // stocker la valeur de la case D[0][2]
+        (*rubiks)[side_to_index('F', *rubiks)][0][2-i].color = (*rubiks)[side_to_index('R', *rubiks)][0][2-i].color;
+        stock2 = (*rubiks)[side_to_index('L', *rubiks)][0+i][0].color;
+        (*rubiks)[side_to_index('L', *rubiks)][0][0+i].color = stock;
+        stock = (*rubiks)[side_to_index('B', *rubiks)][0][2-i].color;
+        (*rubiks)[side_to_index('B', *rubiks)][0][2-i].color = stock2;
+        (*rubiks)[side_to_index('R', *rubiks)][0][2-i].color = stock;
+    }
+    exchangeColors(&((*rubiks)[side_to_index('U', *rubiks)][0][0]),&((*rubiks)[side_to_index('U', *rubiks)][2][2]));
+    exchangeColors(&((*rubiks)[side_to_index('U', *rubiks)][0][1]),&((*rubiks)[side_to_index('U', *rubiks)][2][1]));
+    exchangeColors(&((*rubiks)[side_to_index('U', *rubiks)][0][2]),&((*rubiks)[side_to_index('U', *rubiks)][2][0]));
+    exchangeColors(&((*rubiks)[side_to_index('U', *rubiks)][1][0]),&((*rubiks)[side_to_index('U', *rubiks)][1][2]));
+}
+
+void exchangeColors(Square * first,Square * second){
+    int stock;
+    stock = first->color;
+    first->color = second->color;
+    second->color = stock;
+}
 
