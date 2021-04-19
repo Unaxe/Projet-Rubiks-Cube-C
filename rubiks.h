@@ -12,5 +12,7 @@ typedef enum T_COLOR T_COLOR;
 typedef enum T_SIDE T_SIDE;
 typedef struct Face Face;
 
+int select_color(char color);
+
 
 #endif //PROJETC_RUBIKS_H

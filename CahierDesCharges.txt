@@ -1,7 +1,7 @@
 # Creation du rubiks Cube
-Creation d'une structure color
-Creation d'une structure Face
-Creation d'un pointeur de type Face (rubiks)
+✔ Creation d'une structure color
+✔ Creation d'une structure Face
+✔ Creation d'un pointeur de type Face (rubiks)
 
 #Fonctions pour les types enumérés
 select_color -> prends en parametre le nom d'une couleur et return la valeur numerique de la couleur
