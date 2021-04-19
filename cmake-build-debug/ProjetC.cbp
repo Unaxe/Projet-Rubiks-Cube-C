@@ -74,6 +74,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/conio.c">
+			<Option target="ProjetC"/>
+		</Unit>
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/conio.h">
+			<Option target="ProjetC"/>
+		</Unit>
 		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/main.c">
 			<Option target="ProjetC"/>
 		</Unit>

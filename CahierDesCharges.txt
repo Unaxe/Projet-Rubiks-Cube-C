@@ -8,8 +8,8 @@
 side_to_index -> prends en parametre le nom d'une Face ({UP,DOWN,LEFT,RIGHT,...}) et return la place dans le tableau Rubiks de la Face
 
 #
-Face *** create_rubiks();
-Void init_rubiks(Face *** rubiks);
+✔ Face *** create_rubiks();
+✔ Void init_rubiks(Face *** rubiks);
 display_rubiks -> Afficher le rubiks cube
 blank_rubiks -> Griser le rubiks
 fill_rubiks -> remplir manuellement (sans securité)

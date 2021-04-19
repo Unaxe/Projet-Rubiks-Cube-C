@@ -142,6 +142,33 @@ ProjetC/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/build
 .PHONY : ProjetC/fast
 
+conio.obj: conio.c.obj
+
+.PHONY : conio.obj
+
+# target to build an object file
+conio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/conio.c.obj
+.PHONY : conio.c.obj
+
+conio.i: conio.c.i
+
+.PHONY : conio.i
+
+# target to preprocess a source file
+conio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/conio.c.i
+.PHONY : conio.c.i
+
+conio.s: conio.c.s
+
+.PHONY : conio.s
+
+# target to generate assembly for a file
+conio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/conio.c.s
+.PHONY : conio.c.s
+
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -205,6 +232,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... ProjetC
+	@echo ... conio.obj
+	@echo ... conio.i
+	@echo ... conio.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ProjetC.dir/conio.c.obj"
   "CMakeFiles/ProjetC.dir/main.c.obj"
   "CMakeFiles/ProjetC.dir/rubiks.c.obj"
   "ProjetC.exe"

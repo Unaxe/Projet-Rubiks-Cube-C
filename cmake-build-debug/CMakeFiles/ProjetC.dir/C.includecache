@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/conio.h
+
 C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/main.c
 rubiks.h
 C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/rubiks.h
@@ -19,4 +21,6 @@ stdlib.h
 -
 stdio.h
 -
+conio.h
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/conio.h
 
