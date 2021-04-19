@@ -1,0 +1,40 @@
+# Creation du rubiks Cube
+Creation d'une structure color
+Creation d'une structure Face
+Creation d'un pointeur de type Face (rubiks)
+
+#Fonctions pour les types enumérés
+select_color -> prends en parametre le nom d'une couleur et return la valeur numerique de la couleur
+side_to_index -> prends en parametre le nom d'une Face ({UP,DOWN,LEFT,RIGHT,...}) et return la place dans le tableau Rubiks de la Face
+
+#
+Face *** create_rubiks();
+Void init_rubiks(Face *** rubiks);
+display_rubiks -> Afficher le rubiks cube
+blank_rubiks -> Griser le rubiks
+fill_rubiks -> remplir manuellement (sans securité)
+
+#Fonctions de mouvement
+{side_name}_clockwise
+{side_name}_anticlockwise
+horizontal_rotation
+vertical_rotation
+
+move_rubiks :
+        switch(variable) :
+            case 1 :
+            ....
+            ...
+            ...
+            break;
+
+
+scramble_rubiks -> mélanger le rubiks cube
+
+
+
+
+Ajouter une securité à fill_rubiks
+
+
+
