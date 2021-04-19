@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "rubiks.h"
 
 int main() {
     printf("Hello, World!\n");

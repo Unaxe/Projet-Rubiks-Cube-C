@@ -77,6 +77,12 @@
 		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/main.c">
 			<Option target="ProjetC"/>
 		</Unit>
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/rubiks.c">
+			<Option target="ProjetC"/>
+		</Unit>
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/rubiks.h">
+			<Option target="ProjetC"/>
+		</Unit>
 		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

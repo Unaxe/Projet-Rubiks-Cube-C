@@ -169,6 +169,33 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/main.c.s
 .PHONY : main.c.s
 
+rubiks.obj: rubiks.c.obj
+
+.PHONY : rubiks.obj
+
+# target to build an object file
+rubiks.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/rubiks.c.obj
+.PHONY : rubiks.c.obj
+
+rubiks.i: rubiks.c.i
+
+.PHONY : rubiks.i
+
+# target to preprocess a source file
+rubiks.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/rubiks.c.i
+.PHONY : rubiks.c.i
+
+rubiks.s: rubiks.c.s
+
+.PHONY : rubiks.s
+
+# target to generate assembly for a file
+rubiks.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/rubiks.c.s
+.PHONY : rubiks.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -181,6 +208,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... rubiks.obj
+	@echo ... rubiks.i
+	@echo ... rubiks.s
 .PHONY : help
 
 
