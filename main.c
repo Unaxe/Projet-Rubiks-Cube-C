@@ -1,6 +1,6 @@
 #include "rubiks.h"
 
 int main() {
-    printf("PM et Rom1\n");
+    printf("PM et Romain\n");
     return 0;
 }
