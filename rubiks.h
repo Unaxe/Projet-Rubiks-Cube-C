@@ -21,11 +21,20 @@ void display_rubiks(Square *** rubiks);
 void free_rubiks(Square **** rubiks);
 void color_display(int color);
 void blank_rubiks(Square **** rubiks);
+//Rotations sens horaire
 void FRONT_clockwise(Square **** rubiks,int type);
 void BACK_clockwise(Square **** rubiks,int type);
 void UP_clockwise(Square **** rubiks,int type);
 void DOWN_clockwise(Square **** rubiks,int type);
 void RIGHT_clockwise(Square **** rubiks,int type);
 void LEFT_clockwise(Square **** rubiks,int type);
+//Rotations sens antihoraire
+void FRONT_anticlockwise(Square **** rubiks,int type);
+void BACK_anticlockwise(Square **** rubiks,int type);
+void UP_anticlockwise(Square **** rubiks,int type);
+void DOWN_anticlockwise(Square **** rubiks,int type);
+void RIGHT_anticlockwise(Square **** rubiks,int type);
+void LEFT_anticlockwise(Square **** rubiks,int type);
+
 void exchangeColors(Square * first,Square * second);
 #endif //PROJETC_RUBIKS_H

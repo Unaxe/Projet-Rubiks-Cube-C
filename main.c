@@ -9,6 +9,8 @@ int main() {
     printf("Displayed\n");
     LEFT_clockwise(&rubiks,1);
     display_rubiks(rubiks);
+    LEFT_anticlockwise(&rubiks,1);
+    display_rubiks(rubiks);
     free_rubiks(&rubiks);
     printf("Free\n");
     return 0;
