@@ -227,6 +227,7 @@ void display_rubiks(Square *** rubiks){
         }
         printf("\n");
     }
+    printf("\n");
 }
 
 void blank_rubiks(Square **** rubiks){
@@ -240,41 +241,165 @@ void blank_rubiks(Square **** rubiks){
     }
 }
 
-void FRONT_clockwise(Square **** rubiks){
-    int stock,stock2,i;
+void FRONT_clockwise(Square **** rubiks,int type){
+    int stock,stock2,i,cpt;
     // Rotation du premier groupe de carrés
-    for (i = 0;i<3;i++) {
-        stock = (*rubiks)[side_to_index('D', *rubiks)][0][2-i].color; // stocker la valeur de la case D[0][2]
-        (*rubiks)[side_to_index('D', *rubiks)][0][2-i].color = (*rubiks)[side_to_index('R', *rubiks)][0+i][0].color;
-        stock2 = (*rubiks)[side_to_index('L', *rubiks)][2-i][2].color;
-        (*rubiks)[side_to_index('L', *rubiks)][2-i][2].color = stock;
-        stock = (*rubiks)[side_to_index('U', *rubiks)][2][0+i].color;
-        (*rubiks)[side_to_index('U', *rubiks)][2][0+i].color = stock2;
-        (*rubiks)[side_to_index('R', *rubiks)][0+i][0].color = stock;
+    int D,R,L,U,F;
+    D = side_to_index('D', *rubiks);
+    R = side_to_index('R', *rubiks);
+    L = side_to_index('L', *rubiks);
+    U = side_to_index('U', *rubiks);
+    F = side_to_index('F', *rubiks);
+
+    for (cpt = 0;cpt<type;cpt++){
+        for (i = 0; i < 3; i++) {
+            stock = (*rubiks)[D][0][2 - i].color; // stocker la valeur de la case D[0][2]
+            (*rubiks)[D][0][2 - i].color = (*rubiks)[R][0 + i][0].color;
+            stock2 = (*rubiks)[L][2 - i][2].color;
+            (*rubiks)[L][2 - i][2].color = stock;
+            stock = (*rubiks)[U][2][0 + i].color;
+            (*rubiks)[U][2][0 + i].color = stock2;
+            (*rubiks)[R][0 + i][0].color = stock;
+        }
+        exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][2][2]));
+        exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][2][1]));
+        exchangeColors(&((*rubiks)[F][0][2]), &((*rubiks)[F][2][0]));
+        exchangeColors(&((*rubiks)[F][1][0]), &((*rubiks)[F][1][2]));
     }
-    exchangeColors(&((*rubiks)[side_to_index('F', *rubiks)][0][0]),&((*rubiks)[side_to_index('F', *rubiks)][2][2]));
-    exchangeColors(&((*rubiks)[side_to_index('F', *rubiks)][0][1]),&((*rubiks)[side_to_index('F', *rubiks)][2][1]));
-    exchangeColors(&((*rubiks)[side_to_index('F', *rubiks)][0][2]),&((*rubiks)[side_to_index('F', *rubiks)][2][0]));
-    exchangeColors(&((*rubiks)[side_to_index('F', *rubiks)][1][0]),&((*rubiks)[side_to_index('F', *rubiks)][1][2]));
 }
 
-void UP_clockwise(Square **** rubiks){
-    int stock,stock2,i;
+
+void UP_clockwise(Square **** rubiks,int type){
+    int stock,stock2,i,cpt;
+    int B,R,L,U,F;
+    B = side_to_index('B', *rubiks);
+    R = side_to_index('R', *rubiks);
+    L = side_to_index('L', *rubiks);
+    U = side_to_index('U', *rubiks);
+    F = side_to_index('F', *rubiks);
     // Rotation du premier groupe de carrés
-    for (i = 0;i<3;i++) {
-        stock = (*rubiks)[side_to_index('F', *rubiks)][0][2-i].color; // stocker la valeur de la case D[0][2]
-        (*rubiks)[side_to_index('F', *rubiks)][0][2-i].color = (*rubiks)[side_to_index('R', *rubiks)][0][2-i].color;
-        stock2 = (*rubiks)[side_to_index('L', *rubiks)][0+i][0].color;
-        (*rubiks)[side_to_index('L', *rubiks)][0][0+i].color = stock;
-        stock = (*rubiks)[side_to_index('B', *rubiks)][0][2-i].color;
-        (*rubiks)[side_to_index('B', *rubiks)][0][2-i].color = stock2;
-        (*rubiks)[side_to_index('R', *rubiks)][0][2-i].color = stock;
+    for(cpt = 0;cpt<type;cpt++){
+        for (i = 0; i < 3; i++) {
+            stock = (*rubiks)[F][0][2 - i].color; // stocker la valeur de la case D[0][2]
+            (*rubiks)[F][0][2 - i].color = (*rubiks)[R][0][2 - i].color;
+            stock2 = (*rubiks)[L][0 + i][0].color;
+            (*rubiks)[L][0][0 + i].color = stock;
+            stock = (*rubiks)[B][0][2 - i].color;
+            (*rubiks)[B][0][2 - i].color = stock2;
+            (*rubiks)[R][0][2 - i].color = stock;
+        }
+        exchangeColors(&((*rubiks)[U][0][0]), &((*rubiks)[U][2][2]));
+        exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][2][1]));
+        exchangeColors(&((*rubiks)[U][0][2]), &((*rubiks)[U][2][0]));
+        exchangeColors(&((*rubiks)[U][1][0]), &((*rubiks)[U][1][2]));
     }
-    exchangeColors(&((*rubiks)[side_to_index('U', *rubiks)][0][0]),&((*rubiks)[side_to_index('U', *rubiks)][2][2]));
-    exchangeColors(&((*rubiks)[side_to_index('U', *rubiks)][0][1]),&((*rubiks)[side_to_index('U', *rubiks)][2][1]));
-    exchangeColors(&((*rubiks)[side_to_index('U', *rubiks)][0][2]),&((*rubiks)[side_to_index('U', *rubiks)][2][0]));
-    exchangeColors(&((*rubiks)[side_to_index('U', *rubiks)][1][0]),&((*rubiks)[side_to_index('U', *rubiks)][1][2]));
 }
+
+void BACK_clockwise(Square **** rubiks,int type) {
+    int stock, stock2, i,cpt;
+    int B, R, L, U, D;
+    B = side_to_index('B', *rubiks);
+    R = side_to_index('R', *rubiks);
+    L = side_to_index('L', *rubiks);
+    U = side_to_index('U', *rubiks);
+    D = side_to_index('D', *rubiks);
+    // Rotation du premier groupe de carrés
+    for(cpt = 0;cpt<type;cpt++){
+        for (i = 0; i < 3; i++) {
+            stock = (*rubiks)[D][2][0 + i].color; // stocker la valeur de la case D[0][2]
+            (*rubiks)[D][2][0 + i].color = (*rubiks)[L][0 + i][0].color;
+            stock2 = (*rubiks)[R][2 - i][2].color;
+            (*rubiks)[R][2 - i][2].color = stock;
+            stock = (*rubiks)[U][0][2 - i].color;
+            (*rubiks)[U][0][2 - i].color = stock2;
+            (*rubiks)[L][0 + i][0].color = stock;
+        }
+        exchangeColors(&((*rubiks)[B][0][0]), &((*rubiks)[B][2][2]));
+        exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][2][1]));
+        exchangeColors(&((*rubiks)[B][0][2]), &((*rubiks)[B][2][0]));
+        exchangeColors(&((*rubiks)[B][1][0]), &((*rubiks)[B][1][2]));
+    }
+}
+
+void DOWN_clockwise(Square **** rubiks,int type) {
+    int stock,stock2,i,cpt;
+    // Rotation du premier groupe de carrés
+    int D,R,L,B,F;
+    D = side_to_index('D', *rubiks);
+    R = side_to_index('R', *rubiks);
+    L = side_to_index('L', *rubiks);
+    B = side_to_index('B', *rubiks);
+    F = side_to_index('F', *rubiks);
+
+    for(cpt = 0;cpt<type;cpt++){
+        for (i = 0; i < 3; i++) {
+            stock = (*rubiks)[B][2][0 + i].color; // stocker la valeur de la case D[0][2]
+            (*rubiks)[B][2][0 + i].color = (*rubiks)[R][2][0 + i].color;
+            stock2 = (*rubiks)[L][2][0 + i].color;
+            (*rubiks)[L][2][0 + i].color = stock;
+            stock = (*rubiks)[F][2][0 + i].color;
+            (*rubiks)[F][2][0 + i].color = stock2;
+            (*rubiks)[R][2][0 + i].color = stock;
+        }
+        exchangeColors(&((*rubiks)[D][0][0]), &((*rubiks)[D][2][2]));
+        exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][2][1]));
+        exchangeColors(&((*rubiks)[D][0][2]), &((*rubiks)[D][2][0]));
+        exchangeColors(&((*rubiks)[D][1][0]), &((*rubiks)[D][1][2]));
+    }
+}
+void RIGHT_clockwise(Square **** rubiks,int type) {
+    int stock,stock2,i,cpt;
+    // Rotation du premier groupe de carrés
+    int D,R,B,U,F;
+    D = side_to_index('D', *rubiks);
+    R = side_to_index('R', *rubiks);
+    B = side_to_index('B', *rubiks);
+    U = side_to_index('U', *rubiks);
+    F = side_to_index('F', *rubiks);
+
+    for(cpt = 0;cpt<type;cpt++){
+        for (i = 0; i < 3; i++) {
+            stock = (*rubiks)[D][2 - i][2].color; // stocker la valeur de la case D[0][2]
+            (*rubiks)[D][2 - i][2].color = (*rubiks)[B][0 + i][0].color;
+            stock2 = (*rubiks)[F][2 - i][2].color;
+            (*rubiks)[F][2 - i][2].color = stock;
+            stock = (*rubiks)[U][2 - i][2].color;
+            (*rubiks)[U][2 - i][2].color = stock2;
+            (*rubiks)[B][0 + i][0].color = stock;
+        }
+        exchangeColors(&((*rubiks)[R][0][0]), &((*rubiks)[R][2][2]));
+        exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][2][1]));
+        exchangeColors(&((*rubiks)[R][0][2]), &((*rubiks)[R][2][0]));
+        exchangeColors(&((*rubiks)[R][1][0]), &((*rubiks)[R][1][2]));
+    }
+}
+void LEFT_clockwise(Square **** rubiks,int type){
+    int stock,stock2,i,cpt;
+    // Rotation du premier groupe de carrés
+    int D,B,L,U,F;
+    D = side_to_index('D', *rubiks);
+    B = side_to_index('B', *rubiks);
+    L = side_to_index('L', *rubiks);
+    U = side_to_index('U', *rubiks);
+    F = side_to_index('F', *rubiks);
+
+    for (cpt = 0;cpt<type;cpt++){
+        for (i = 0; i < 3; i++) {
+            stock = (*rubiks)[D][0+i][0].color; // stocker la valeur de la case D[0][2]
+            (*rubiks)[D][0+i][0].color = (*rubiks)[F][0 + i][0].color;
+            stock2 = (*rubiks)[B][2 - i][2].color;
+            (*rubiks)[B][2 - i][2].color = stock;
+            stock = (*rubiks)[U][0+i][0].color;
+            (*rubiks)[U][0+i][0].color = stock2;
+            (*rubiks)[F][0 + i][0].color = stock;
+        }
+        exchangeColors(&((*rubiks)[L][0][0]), &((*rubiks)[L][2][2]));
+        exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][2][1]));
+        exchangeColors(&((*rubiks)[L][0][2]), &((*rubiks)[L][2][0]));
+        exchangeColors(&((*rubiks)[L][1][0]), &((*rubiks)[L][1][2]));
+    }
+}
+
 
 void exchangeColors(Square * first,Square * second){
     int stock;

@@ -7,7 +7,7 @@ int main() {
     printf("Inited\n");
     display_rubiks(rubiks);
     printf("Displayed\n");
-    UP_clockwise(&rubiks);
+    LEFT_clockwise(&rubiks,1);
     display_rubiks(rubiks);
     free_rubiks(&rubiks);
     printf("Free\n");
