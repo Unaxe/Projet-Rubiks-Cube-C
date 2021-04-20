@@ -587,6 +587,87 @@ void LEFT_anticlockwise(Square **** rubiks,int type){
     }
 }
 
+void reverseFace(Square *** Face){
+    exchangeColors(&((*Face)[0][0]), &((*Face)[2][2]));
+    exchangeColors(&((*Face)[0][1]), &((*Face)[2][1]));
+    exchangeColors(&((*Face)[0][2]), &((*Face)[2][0]));
+    exchangeColors(&((*Face)[1][0]), &((*Face)[1][2]));
+}
+void horizontal_rotation(Square **** rubiks){
+    int D,B,L,U,F,R,i,j;
+    D = side_to_index('D', *rubiks);
+    B = side_to_index('B', *rubiks);
+    L = side_to_index('L', *rubiks);
+    U = side_to_index('U', *rubiks);
+    F = side_to_index('F', *rubiks);
+    R = side_to_index('R', *rubiks);
+
+    for(i = 0;i<6;i++){
+        reverseFace(&((*rubiks)[i]));
+    }
+
+
+    for(i = 0;i<3;i++){
+        for(j=0;j<3;j++){
+            (*rubiks)[D][i][j].side = UP;
+        }
+    }
+    for(i = 0;i<3;i++){
+        for(j=0;j<3;j++){
+            (*rubiks)[U][i][j].side = DOWN;
+        }
+    }
+    for(i = 0;i<3;i++){
+        for(j=0;j<3;j++){
+            (*rubiks)[L][i][j].side = RIGHT;
+        }
+    }
+    for(i = 0;i<3;i++){
+        for(j=0;j<3;j++){
+            (*rubiks)[R][i][j].side = LEFT;
+        }
+    }
+}
+
+void vertical_rotation(Square **** rubiks){
+    int D,B,L,U,F,R,i,j;
+    D = side_to_index('D', *rubiks);
+    B = side_to_index('B', *rubiks);
+    L = side_to_index('L', *rubiks);
+    U = side_to_index('U', *rubiks);
+    F = side_to_index('F', *rubiks);
+    R = side_to_index('R', *rubiks);
+
+    for(i = 0;i<3;i++){
+        for(j=0;j<3;j++){
+            (*rubiks)[D][i][j].side = UP;
+        }
+    }
+    for(i = 0;i<3;i++){
+        for(j=0;j<3;j++){
+            (*rubiks)[U][i][j].side = DOWN;
+        }
+    }
+
+    reverseFace(&((*rubiks)[F]));
+    reverseFace(&((*rubiks)[B]));
+    reverseFace(&((*rubiks)[L]));
+    reverseFace(&((*rubiks)[R]));
+
+    for(i = 0;i<3;i++){
+        for(j=0;j<3;j++){
+            (*rubiks)[F][i][j].side = BACK;
+        }
+    }
+
+    for(i = 0;i<3;i++){
+        for(j=0;j<3;j++){
+            (*rubiks)[B][i][j].side = FRONT;
+        }
+    }
+
+}
+
 void exchangeColors(Square * first,Square * second){
     int stock;
     stock = first->color;
