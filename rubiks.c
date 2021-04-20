@@ -261,10 +261,12 @@ void FRONT_clockwise(Square **** rubiks,int type){
             (*rubiks)[U][2][0 + i].color = stock2;
             (*rubiks)[R][0 + i][0].color = stock;
         }
+        exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][0][2]));
         exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][2][2]));
+        exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][2][0]));
+        exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][1][2]));
         exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][2][1]));
-        exchangeColors(&((*rubiks)[F][0][2]), &((*rubiks)[F][2][0]));
-        exchangeColors(&((*rubiks)[F][1][0]), &((*rubiks)[F][1][2]));
+        exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][1][0]));
     }
 }
 
@@ -287,10 +289,12 @@ void UP_clockwise(Square **** rubiks,int type){
             (*rubiks)[B][0][2 - i].color = stock2;
             (*rubiks)[R][0][2 - i].color = stock;
         }
+        exchangeColors(&((*rubiks)[U][0][0]), &((*rubiks)[U][0][2]));
         exchangeColors(&((*rubiks)[U][0][0]), &((*rubiks)[U][2][2]));
+        exchangeColors(&((*rubiks)[U][0][0]), &((*rubiks)[U][2][0]));
+        exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][1][2]));
         exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][2][1]));
-        exchangeColors(&((*rubiks)[U][0][2]), &((*rubiks)[U][2][0]));
-        exchangeColors(&((*rubiks)[U][1][0]), &((*rubiks)[U][1][2]));
+        exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][1][0]));
     }
 }
 
@@ -313,10 +317,12 @@ void BACK_clockwise(Square **** rubiks,int type) {
             (*rubiks)[U][0][2 - i].color = stock2;
             (*rubiks)[L][0 + i][0].color = stock;
         }
+        exchangeColors(&((*rubiks)[B][0][0]), &((*rubiks)[B][0][2]));
         exchangeColors(&((*rubiks)[B][0][0]), &((*rubiks)[B][2][2]));
+        exchangeColors(&((*rubiks)[B][0][0]), &((*rubiks)[B][2][0]));
+        exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][1][2]));
         exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][2][1]));
-        exchangeColors(&((*rubiks)[B][0][2]), &((*rubiks)[B][2][0]));
-        exchangeColors(&((*rubiks)[B][1][0]), &((*rubiks)[B][1][2]));
+        exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][1][0]));
     }
 }
 
@@ -340,10 +346,12 @@ void DOWN_clockwise(Square **** rubiks,int type) {
             (*rubiks)[F][2][0 + i].color = stock2;
             (*rubiks)[R][2][0 + i].color = stock;
         }
+        exchangeColors(&((*rubiks)[D][0][0]), &((*rubiks)[D][0][2]));
         exchangeColors(&((*rubiks)[D][0][0]), &((*rubiks)[D][2][2]));
+        exchangeColors(&((*rubiks)[D][0][0]), &((*rubiks)[D][2][0]));
+        exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][1][2]));
         exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][2][1]));
-        exchangeColors(&((*rubiks)[D][0][2]), &((*rubiks)[D][2][0]));
-        exchangeColors(&((*rubiks)[D][1][0]), &((*rubiks)[D][1][2]));
+        exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][1][0]));
     }
 }
 
@@ -367,10 +375,12 @@ void RIGHT_clockwise(Square **** rubiks,int type) {
             (*rubiks)[U][2 - i][2].color = stock2;
             (*rubiks)[B][0 + i][0].color = stock;
         }
+        exchangeColors(&((*rubiks)[R][0][0]), &((*rubiks)[R][0][2]));
         exchangeColors(&((*rubiks)[R][0][0]), &((*rubiks)[R][2][2]));
+        exchangeColors(&((*rubiks)[R][0][0]), &((*rubiks)[R][2][0]));
+        exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][1][2]));
         exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][2][1]));
-        exchangeColors(&((*rubiks)[R][0][2]), &((*rubiks)[R][2][0]));
-        exchangeColors(&((*rubiks)[R][1][0]), &((*rubiks)[R][1][2]));
+        exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][1][0]));
     }
 }
 
@@ -394,10 +404,12 @@ void LEFT_clockwise(Square **** rubiks,int type){
             (*rubiks)[U][0+i][0].color = stock2;
             (*rubiks)[F][0 + i][0].color = stock;
         }
+        exchangeColors(&((*rubiks)[L][0][0]), &((*rubiks)[L][0][2]));
         exchangeColors(&((*rubiks)[L][0][0]), &((*rubiks)[L][2][2]));
+        exchangeColors(&((*rubiks)[L][0][0]), &((*rubiks)[L][2][0]));
+        exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][1][2]));
         exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][2][1]));
-        exchangeColors(&((*rubiks)[L][0][2]), &((*rubiks)[L][2][0]));
-        exchangeColors(&((*rubiks)[L][1][0]), &((*rubiks)[L][1][2]));
+        exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][1][0]));
     }
 }
 
@@ -421,10 +433,12 @@ void FRONT_anticlockwise(Square **** rubiks,int type){
             (*rubiks)[D][0][2 - i].color = stock2;
             (*rubiks)[R][0 + i][0].color = stock;
         }
+        exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][0][2]));
         exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][2][2]));
+        exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][2][0]));
+        exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][1][2]));
         exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][2][1]));
-        exchangeColors(&((*rubiks)[F][0][2]), &((*rubiks)[F][2][0]));
-        exchangeColors(&((*rubiks)[F][1][0]), &((*rubiks)[F][1][2]));
+        exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][1][0]));
     }
 }
 
@@ -448,10 +462,12 @@ void BACK_anticlockwise(Square **** rubiks,int type){
             (*rubiks)[D][2][0 + i].color = stock2;
             (*rubiks)[L][0 + i][0].color = stock;
         }
+        exchangeColors(&((*rubiks)[B][0][0]), &((*rubiks)[B][0][2]));
         exchangeColors(&((*rubiks)[B][0][0]), &((*rubiks)[B][2][2]));
+        exchangeColors(&((*rubiks)[B][0][0]), &((*rubiks)[B][2][0]));
+        exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][1][2]));
         exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][2][1]));
-        exchangeColors(&((*rubiks)[B][0][2]), &((*rubiks)[B][2][0]));
-        exchangeColors(&((*rubiks)[B][1][0]), &((*rubiks)[B][1][2]));
+        exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][1][0]));
     }
 }
 
@@ -475,10 +491,12 @@ void UP_anticlockwise(Square **** rubiks,int type){
             (*rubiks)[F][0][2 - i].color = stock2;
             (*rubiks)[R][0][2-i].color = stock;
         }
+        exchangeColors(&((*rubiks)[U][0][0]), &((*rubiks)[U][0][2]));
         exchangeColors(&((*rubiks)[U][0][0]), &((*rubiks)[U][2][2]));
+        exchangeColors(&((*rubiks)[U][0][0]), &((*rubiks)[U][2][0]));
+        exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][1][2]));
         exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][2][1]));
-        exchangeColors(&((*rubiks)[U][0][2]), &((*rubiks)[U][2][0]));
-        exchangeColors(&((*rubiks)[U][1][0]), &((*rubiks)[U][1][2]));
+        exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][1][0]));
     }
 }
 
@@ -502,10 +520,12 @@ void DOWN_anticlockwise(Square **** rubiks,int type){
             (*rubiks)[B][2][0+i].color = stock2;
             (*rubiks)[R][2][0+i].color = stock;
         }
+        exchangeColors(&((*rubiks)[D][0][0]), &((*rubiks)[D][0][2]));
         exchangeColors(&((*rubiks)[D][0][0]), &((*rubiks)[D][2][2]));
+        exchangeColors(&((*rubiks)[D][0][0]), &((*rubiks)[D][2][0]));
+        exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][1][2]));
         exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][2][1]));
-        exchangeColors(&((*rubiks)[D][0][2]), &((*rubiks)[D][2][0]));
-        exchangeColors(&((*rubiks)[D][1][0]), &((*rubiks)[D][1][2]));
+        exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][1][0]));
     }
 }
 
@@ -529,10 +549,12 @@ void RIGHT_anticlockwise(Square **** rubiks,int type){
             (*rubiks)[D][2-i][2].color = stock2;
             (*rubiks)[B][0 + i][0].color = stock;
         }
+        exchangeColors(&((*rubiks)[R][0][0]), &((*rubiks)[R][0][2]));
         exchangeColors(&((*rubiks)[R][0][0]), &((*rubiks)[R][2][2]));
+        exchangeColors(&((*rubiks)[R][0][0]), &((*rubiks)[R][2][0]));
+        exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][1][2]));
         exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][2][1]));
-        exchangeColors(&((*rubiks)[R][0][2]), &((*rubiks)[R][2][0]));
-        exchangeColors(&((*rubiks)[R][1][0]), &((*rubiks)[R][1][2]));
+        exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][1][0]));
     }
 }
 
@@ -556,10 +578,12 @@ void LEFT_anticlockwise(Square **** rubiks,int type){
             (*rubiks)[D][0+i][0].color = stock2;
             (*rubiks)[F][0 + i][0].color = stock;
         }
+        exchangeColors(&((*rubiks)[L][0][0]), &((*rubiks)[L][0][2]));
         exchangeColors(&((*rubiks)[L][0][0]), &((*rubiks)[L][2][2]));
+        exchangeColors(&((*rubiks)[L][0][0]), &((*rubiks)[L][2][0]));
+        exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][1][2]));
         exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][2][1]));
-        exchangeColors(&((*rubiks)[L][0][2]), &((*rubiks)[L][2][0]));
-        exchangeColors(&((*rubiks)[L][1][0]), &((*rubiks)[L][1][2]));
+        exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][1][0]));
     }
 }
 
