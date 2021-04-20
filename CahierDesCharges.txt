@@ -5,7 +5,7 @@
 
 #Fonctions pour les types enumérés
 ✔select_color -> prends en parametre le nom d'une couleur et return la valeur numerique de la couleur
-side_to_index -> prends en parametre le nom d'une Face ({UP,DOWN,LEFT,RIGHT,...}) et return la place dans le tableau Rubiks de la Face
+✔side_to_index -> prends en parametre le nom d'une Face ({UP,DOWN,LEFT,RIGHT,...}) et return la place dans le tableau Rubiks de la Face
 
 #
 ✔ Face *** create_rubiks();
@@ -16,9 +16,9 @@ fill_rubiks -> remplir manuellement (sans securité)
 
 #Fonctions de mouvement
 ✔ {side_name}_clockwise
-{side_name}_anticlockwise
-horizontal_rotation
-vertical_rotation
+✔ {side_name}_anticlockwise
+✔ horizontal_rotation
+✔ vertical_rotation
 
 move_rubiks :
         switch(variable) :
@@ -29,7 +29,9 @@ move_rubiks :
             break;
 
 
-scramble_rubiks -> mélanger le rubiks cube
+scramble_rubiks -> mélanger le rubiks cube : Regarder comment tirer un nombre au hasard sur internet et ensuite tirer un nombre au hasard entre 0 et le nbre d'actions possibles
+    Puis faire un switch de la variable aleatoire et faire en fonction du resultat une action de mouvement au hasard
+    Le tout dans une boucle for assez grande histoire de repeter l'action suffisamment de fois.
 
 
 

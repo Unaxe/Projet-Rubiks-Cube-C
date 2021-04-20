@@ -7,6 +7,12 @@ int main() {
     printf("Inited\n");
     display_rubiks(rubiks);
     printf("Displayed\n");
+    FRONT_clockwise(&rubiks,1);
+    display_rubiks(rubiks);
+    UP_clockwise(&rubiks,1);
+    display_rubiks(rubiks);
+    BACK_clockwise(&rubiks,1);
+    display_rubiks(rubiks);
     vertical_rotation(&rubiks);
     display_rubiks(rubiks);
     free_rubiks(&rubiks);
