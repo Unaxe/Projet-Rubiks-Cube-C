@@ -4,9 +4,9 @@
 
 #include "rubiks.h"
 
-enum T_COLOR{R = 0,B = 1,G = 2,W = 3,Y = 4,O = 5,LG = 6};
+enum T_COLOR{R = 4,B = 3,G = 2,W = 0,Y = 1,O = 5,LG = 6};
 
-enum T_SIDE{FRONT,BACK, UP, DOWN, RIGHT, LEFT};
+enum T_SIDE{FRONT = 2,BACK = 3, UP = 0, DOWN = 1, RIGHT=4, LEFT=5};
 
 struct Square{
     T_SIDE side;
@@ -139,7 +139,7 @@ void display_rubiks(Square *** rubiks){
         }
         printf("\n");
     }
-
+    printf("\n");
 
     j = 0;
     i = side_to_index('L',rubiks);
@@ -217,6 +217,7 @@ void display_rubiks(Square *** rubiks){
         color_display(rubiks[i][j][k].color);
         printf(" ");
     }
+    printf("\n");
     printf("\n");
     i = side_to_index('D',rubiks);
     for (j = 0; j < 3; j++) {
@@ -593,6 +594,7 @@ void reverseFace(Square *** Face){
     exchangeColors(&((*Face)[0][2]), &((*Face)[2][0]));
     exchangeColors(&((*Face)[1][0]), &((*Face)[1][2]));
 }
+
 void horizontal_rotation(Square **** rubiks){
     int D,B,L,U,F,R,i,j;
     D = side_to_index('D', *rubiks);
