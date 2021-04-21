@@ -46,6 +46,7 @@ void vertical_rotation(Square **** rubiks);
 
 
 void scramble_rubiks(Square **** rubiks);
+void move_menu(Square **** rubiks);
 
 void exchangeColors(Square * first,Square * second);
 #endif //PROJETC_RUBIKS_H

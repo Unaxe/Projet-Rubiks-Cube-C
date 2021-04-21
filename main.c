@@ -8,6 +8,10 @@ int main() {
     display_rubiks(rubiks);
     printf("Displayed\n");
     scramble_rubiks(&rubiks);
+    for (int i=0;i<10;i++){
+        move_menu(&rubiks);
+        display_rubiks(rubiks);
+    }
     display_rubiks(rubiks);
     free_rubiks(&rubiks);
     printf("Free\n");

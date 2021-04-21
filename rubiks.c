@@ -141,83 +141,32 @@ void display_rubiks(Square *** rubiks){
     }
     printf("\n");
 
-    j = 0;
-    i = side_to_index('L',rubiks);
-    for (k = 0;k<3;k++){
-        color_display(rubiks[i][j][k].color);
+    for(j = 0;j<3;j++) {
+        i = side_to_index('L', rubiks);
+        for (k = 0; k < 3; k++) {
+            color_display(rubiks[i][j][k].color);
+            printf(" ");
+        }
+        i = side_to_index('F', rubiks);
         printf(" ");
-    }
-    i = side_to_index('F',rubiks);
-    printf(" ");
-    for (k = 0;k<3;k++) {
-        color_display(rubiks[i][j][k].color);
+        for (k = 0; k < 3; k++) {
+            color_display(rubiks[i][j][k].color);
+            printf(" ");
+        }
+        i = side_to_index('R', rubiks);
         printf(" ");
-    }
-    i = side_to_index('R',rubiks);
-    printf(" ");
-    for (k = 0;k<3;k++){
-        color_display(rubiks[i][j][k].color);
+        for (k = 0; k < 3; k++) {
+            color_display(rubiks[i][j][k].color);
+            printf(" ");
+        }
+        i = side_to_index('B', rubiks);
         printf(" ");
+        for (k = 0; k < 3; k++) {
+            color_display(rubiks[i][j][k].color);
+            printf(" ");
+        }
+        printf("\n");
     }
-    i = side_to_index('B',rubiks);
-    printf(" ");
-    for (k = 0;k<3;k++){
-        color_display(rubiks[i][j][k].color);
-        printf(" ");
-    }
-    printf("\n");
-    j = 1;
-    i = side_to_index('L',rubiks);
-    for (k = 0;k<3;k++){
-        color_display(rubiks[i][j][k].color);
-        printf(" ");
-    }
-    i = side_to_index('F',rubiks);
-    printf(" ");
-    for (k = 0;k<3;k++){
-        color_display(rubiks[i][j][k].color);
-        printf(" ");
-    }
-    i = side_to_index('R',rubiks);
-    printf(" ");
-    for (k = 0;k<3;k++){
-        color_display(rubiks[i][j][k].color);
-        printf(" ");
-    }
-    i = side_to_index('B',rubiks);
-    printf(" ");
-    for (k = 0;k<3;k++){
-        color_display(rubiks[i][j][k].color);
-        printf(" ");
-    }
-    printf("\n");
-
-
-    j = 2;
-    i = side_to_index('L',rubiks);
-    for (k = 0;k<3;k++){
-        color_display(rubiks[i][j][k].color);
-        printf(" ");
-    }
-    i = side_to_index('F',rubiks);
-    printf(" ");
-    for (k = 0;k<3;k++){
-        color_display(rubiks[i][j][k].color);
-        printf(" ");
-    }
-    i = side_to_index('R',rubiks);
-    printf(" ");
-    for (k = 0;k<3;k++){
-        color_display(rubiks[i][j][k].color);
-        printf(" ");
-    }
-    i = side_to_index('B',rubiks);
-    printf(" ");
-    for (k = 0;k<3;k++){
-        color_display(rubiks[i][j][k].color);
-        printf(" ");
-    }
-    printf("\n");
     printf("\n");
     i = side_to_index('D',rubiks);
     for (j = 0; j < 3; j++) {
@@ -730,5 +679,71 @@ void scramble_rubiks(Square **** rubiks){
                 printf("Erreur\n");
         }
     }
+}
+
+void move_menu(Square **** rubiks){
+    int choice;
+    printf("Entrez le choix :\n"
+           "1.F\n"
+           "2.F'\n"
+           "3.B\n"
+           "4.B'\n"
+           "5.R\n"
+           "6.R'\n"
+           "7.L\n"
+           "8.L'\n"
+           "9.U\n"
+           "10.U'\n"
+           "11.D\n"
+           "12.D'\n"
+           "13.horizontal rotation\n"
+           "14.vertical rotation\n");
+    scanf("%d",&choice);
+    switch (choice) {
+        case 1 :
+            FRONT_clockwise(rubiks,1);
+            break;
+        case 2:
+            FRONT_anticlockwise(rubiks,1);
+            break;
+        case 3:
+            BACK_clockwise(rubiks,1);
+            break;
+        case 4:
+            BACK_anticlockwise(rubiks,1);
+            break;
+        case 5:
+            RIGHT_clockwise(rubiks,1);
+            break;
+        case 6:
+            RIGHT_anticlockwise(rubiks,1);
+            break;
+        case 7:
+            LEFT_clockwise(rubiks,1);
+            break;
+        case 8:
+            LEFT_anticlockwise(rubiks,1);
+            break;
+        case 9:
+            UP_clockwise(rubiks,1);
+            break;
+        case 10:
+            UP_anticlockwise(rubiks,1);
+            break;
+        case 11:
+            DOWN_clockwise(rubiks,1);
+            break;
+        case 12:
+            DOWN_anticlockwise(rubiks,1);
+            break;
+        case 13:
+            horizontal_rotation(rubiks);
+            break;
+        case 14:
+            vertical_rotation(rubiks);
+            break;
+        default:
+            printf("Erreur\n");
+}
 }
 
