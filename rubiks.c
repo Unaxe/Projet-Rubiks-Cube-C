@@ -675,3 +675,58 @@ void exchangeColors(Square * first,Square * second){
     second->color = stock;
 }
 
+void scramble_rubiks(Square **** rubiks){
+    srand(time(NULL));
+    int hasard,i;
+    const int MAX = 14, MIN = 1;
+    for(i = 0;i<100;i++){
+        hasard = (rand() % (MAX - MIN + 1)) + MIN;
+        switch (hasard) {
+            case 1 :
+                FRONT_clockwise(rubiks,1);
+                break;
+            case 2:
+                FRONT_anticlockwise(rubiks,1);
+                break;
+            case 3:
+                BACK_clockwise(rubiks,1);
+                break;
+            case 4:
+                BACK_anticlockwise(rubiks,1);
+                break;
+            case 5:
+                RIGHT_clockwise(rubiks,1);
+                break;
+            case 6:
+                RIGHT_anticlockwise(rubiks,1);
+                break;
+            case 7:
+                LEFT_clockwise(rubiks,1);
+                break;
+            case 8:
+                LEFT_anticlockwise(rubiks,1);
+                break;
+            case 9:
+                UP_clockwise(rubiks,1);
+                break;
+            case 10:
+                UP_anticlockwise(rubiks,1);
+                break;
+            case 11:
+                DOWN_clockwise(rubiks,1);
+                break;
+            case 12:
+                DOWN_anticlockwise(rubiks,1);
+                break;
+            case 13:
+                horizontal_rotation(rubiks);
+                break;
+            case 14:
+                vertical_rotation(rubiks);
+                break;
+            default:
+                printf("Erreur\n");
+        }
+    }
+}
+

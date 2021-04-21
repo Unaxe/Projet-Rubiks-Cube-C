@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "conio.h"
+#include <time.h>
 
 typedef enum T_COLOR T_COLOR;
 typedef enum T_SIDE T_SIDE;
@@ -42,6 +43,9 @@ void LEFT_anticlockwise(Square **** rubiks,int type);
 void reverseFace(Square *** Face);
 void horizontal_rotation(Square **** rubiks);
 void vertical_rotation(Square **** rubiks);
+
+
+void scramble_rubiks(Square **** rubiks);
 
 void exchangeColors(Square * first,Square * second);
 #endif //PROJETC_RUBIKS_H
