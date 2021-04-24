@@ -117,7 +117,7 @@ void color_display(int color){
             printf("Y");
             break;
         case O :
-            c_textcolor(MAGENTA);
+            c_textcolor(LIGHTRED);
             printf("O");
             break;
         case LG :
