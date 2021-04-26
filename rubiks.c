@@ -16,19 +16,19 @@ struct Square{
 int select_color(char color){
     switch(color) {
         case 'R' :
-            return 0;
+            return R;
         case 'B' :
-            return 1;
+            return B;
         case 'G' :
-            return 2;
+            return G;
         case 'W' :
-            return 3;
+            return W;
         case 'Y' :
-            return 4;
+            return Y;
         case 'O' :
-            return 5;
+            return O;
         default:
-            return 6;
+            return LG;
     }
 }
 
@@ -747,3 +747,177 @@ void move_menu(Square **** rubiks){
 }
 }
 
+void editFaces(int* D,int* B,int* L,int* U,int* F,int* R,Square *** rubiks){
+    (*D) = side_to_index('D', rubiks);
+    (*B) = side_to_index('B', rubiks);
+    (*L) = side_to_index('L', rubiks);
+    (*U) = side_to_index('U', rubiks);
+    (*F) = side_to_index('F', rubiks);
+    (*R) = side_to_index('R', rubiks);
+}
+
+void Step1(Square **** rubiks){
+    int D,B,L,U,F,R,i,j;
+    editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
+
+    while(((*rubiks)[U][0][1].color != W || ((*rubiks)[B][0][1].color != (*rubiks)[B][1][1].color)) || ((*rubiks)[U][1][2].color != W || ((*rubiks)[R][0][1].color != (*rubiks)[R][1][1].color)) || ((*rubiks)[U][1][0].color != W || ((*rubiks)[L][0][1].color != (*rubiks)[L][1][1].color)) || ((*rubiks)[U][2][1].color != W || ((*rubiks)[F][0][1].color != (*rubiks)[F][1][1].color))   ) {
+        editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
+
+        if ((*rubiks)[U][1][1].color == Y) {
+            vertical_rotation(rubiks);
+            printf("Vertical-Rotation : \n");
+            display_rubiks(*rubiks);
+        }
+
+        for(i = 1;i<8;i+=2){
+            if((*rubiks)[U][i/3][i%3].color == W){
+                switch (i) {
+                    case 1:
+                        if((*rubiks)[B][0][1].color != (*rubiks)[B][1][1].color){
+                            UP_clockwise(rubiks,1);
+                            printf("Up-Clockwise\n");
+                }
+                        break;
+                    case 5:
+                        if(((*rubiks)[R][0][1].color != (*rubiks)[R][1][1].color)){
+                            UP_clockwise(rubiks,1);
+                            printf("Up-Clockwise\n");
+                        }
+                        break;
+                    case 3:
+                        if(((*rubiks)[L][0][1].color != (*rubiks)[L][1][1].color)){
+                            UP_clockwise(rubiks,1);
+                            printf("Up-Clockwise\n");
+                        }
+                        break;
+                    case 7:
+                        if(((*rubiks)[F][0][1].color != (*rubiks)[F][1][1].color)){
+                            UP_clockwise(rubiks,1);
+                            printf("Up-Clockwise\n");
+                        }
+                }
+            }
+        }
+
+        for(i = 1;i<8;i+=2){
+            switch (i) {
+                case 1:
+                    if((*rubiks)[U][0][1].color == (*rubiks)[B][1][1].color){
+                        BACK_clockwise(rubiks,1);
+                        printf("Back-Clockwise\n");
+                        UP_anticlockwise(rubiks,1);
+                        printf("Up-Anti-Clockwise\n");
+                        RIGHT_clockwise(rubiks,1);
+                        printf("Right-Clockwise\n");
+                        UP_clockwise(rubiks,1);
+                        printf("Up-Clockwise\n");
+                    }
+                    break;
+                case 5:
+                    if((*rubiks)[U][1][2].color == (*rubiks)[R][1][1].color){
+                        RIGHT_clockwise(rubiks,1);
+                        printf("Right-Clockwise\n");
+                        UP_anticlockwise(rubiks,1);
+                        printf("Up-Anti-Clockwise\n");
+                        FRONT_clockwise(rubiks,1);
+                        printf("Front-Clockwise\n");
+                        UP_clockwise(rubiks,1);
+                        printf("Up-Clockwise\n");
+                    }
+                    break;
+                case 3:
+                    if((*rubiks)[U][1][0].color == (*rubiks)[L][1][1].color){
+                        LEFT_clockwise(rubiks,1);
+                        printf("Left-Clockwise\n");
+                        UP_anticlockwise(rubiks,1);
+                        printf("Up-Anti-Clockwise\n");
+                        BACK_clockwise(rubiks,1);
+                        printf("Back-Clockwise\n");
+                        UP_clockwise(rubiks,1);
+                        printf("Up-Clockwise\n");
+                    }
+                    break;
+                case 7:
+                    if((*rubiks)[U][2][1].color == (*rubiks)[F][1][1].color){
+                        FRONT_clockwise(rubiks,1);
+                        printf("Front-Clockwise\n");
+                        UP_anticlockwise(rubiks,1);
+                        printf("Up-Anti-Clockwise\n");
+                        RIGHT_clockwise(rubiks,1);
+                        printf("Right-Clockwise\n");
+                        UP_clockwise(rubiks,1);
+                        printf("Up-Clockwise\n");
+                    }
+            }
+
+        }
+
+        for(i = 1;i<8;i+=2){
+            switch (i) {
+                case 1:
+                    if((*rubiks)[D][2][1].color == (*rubiks)[B][1][1].color && (*rubiks)[B][2][1].color == W){
+                        if((*rubiks)[D][2][1].color == (*rubiks)[B][1][1].color){
+                            BACK_anticlockwise(rubiks,1);
+                            LEFT_anticlockwise(rubiks,1);
+                            DOWN_anticlockwise(rubiks,1);
+                            LEFT_clockwise(rubiks,1);
+                            BACK_anticlockwise(rubiks,2);
+                        }else {
+                            DOWN_clockwise(rubiks, 1);
+                            printf("Down_Clockwise\n");
+                        }
+                    }
+                    break;
+                case 5:
+                    if((*rubiks)[R][2][1].color == W){
+                        if((*rubiks)[D][1][2].color == (*rubiks)[R][1][1].color){
+                            RIGHT_anticlockwise(rubiks,1);
+                            BACK_anticlockwise(rubiks,1);
+                            DOWN_anticlockwise(rubiks,1);
+                            BACK_clockwise(rubiks,1);
+                            RIGHT_anticlockwise(rubiks,2);
+                        }else{
+                            DOWN_clockwise(rubiks, 1);
+                            printf("Down_Clockwise\n");
+                        }
+                    }
+                    break;
+                case 3:
+                    if((*rubiks)[L][2][1].color == W){
+                        if((*rubiks)[D][1][0].color == (*rubiks)[L][1][1].color){
+                            LEFT_anticlockwise(rubiks,1);
+                            FRONT_anticlockwise(rubiks,1);
+                            DOWN_anticlockwise(rubiks,1);
+                            FRONT_clockwise(rubiks,1);
+                            LEFT_anticlockwise(rubiks,2);
+                        }else{
+                            DOWN_clockwise(rubiks, 1);
+                            printf("Down_Clockwise\n");
+                        }
+                    }
+                    break;
+                case 7:
+                    if((*rubiks)[F][2][1].color == W){
+                        if((*rubiks)[D][0][1].color == (*rubiks)[F][1][1].color){
+                            FRONT_anticlockwise(rubiks,1);
+                            printf("Front-Anti-Clockwise\n");
+                            RIGHT_anticlockwise(rubiks,1);
+                            printf("Right-Anti-Clockwise\n");
+                            DOWN_anticlockwise(rubiks,1);
+                            printf("Down-Anti-Clockwise\n");
+                            RIGHT_clockwise(rubiks,1);
+                            printf("Right-Clockwise\n");
+                            FRONT_anticlockwise(rubiks,2);
+                            printf("Front-Anti-Clockwise-2\n");
+                        }else{
+                            DOWN_clockwise(rubiks, 1);
+                            printf("Down_Clockwise\n");
+                        }
+                    }
+                    break;
+            }
+
+        }
+
+    }
+}
