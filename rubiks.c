@@ -771,7 +771,7 @@ void editFaces(int* D,int* B,int* L,int* U,int* F,int* R,Square *** rubiks){
 }
 
 int Step1(Square **** rubiks){
-    int D,B,L,U,F,R,i,j;
+    int D,B,L,U,F,R,i,j,bol;
     editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
     if(!(((*rubiks)[U][0][1].color != W || ((*rubiks)[B][0][1].color != (*rubiks)[B][1][1].color)) || ((*rubiks)[U][1][2].color != W || ((*rubiks)[R][0][1].color != (*rubiks)[R][1][1].color)) || ((*rubiks)[U][1][0].color != W || ((*rubiks)[L][0][1].color != (*rubiks)[L][1][1].color)) || ((*rubiks)[U][2][1].color != W || ((*rubiks)[F][0][1].color != (*rubiks)[F][1][1].color))))
         return 1;
@@ -813,7 +813,7 @@ int Step1(Square **** rubiks){
         }
 
 
-
+        bol = 0;
         //case 2
         if((*rubiks)[B][2][1].color == W){
             if((*rubiks)[D][2][1].color == (*rubiks)[B][1][1].color){
@@ -822,9 +822,7 @@ int Step1(Square **** rubiks){
                 DOWN_anticlockwise(rubiks,1);
                 LEFT_clockwise(rubiks,1);
                 BACK_anticlockwise(rubiks,2);
-            }else {
-                DOWN_clockwise(rubiks, 1);
-            }
+            }else bol = 1;
         }
 
         if((*rubiks)[R][2][1].color == W){
@@ -834,9 +832,7 @@ int Step1(Square **** rubiks){
                 DOWN_anticlockwise(rubiks,1);
                 BACK_clockwise(rubiks,1);
                 RIGHT_anticlockwise(rubiks,2);
-            }else{
-                DOWN_clockwise(rubiks, 1);
-            }
+            }else bol = 1;
         }
 
         if((*rubiks)[L][2][1].color == W){
@@ -846,9 +842,7 @@ int Step1(Square **** rubiks){
                 DOWN_anticlockwise(rubiks,1);
                 FRONT_clockwise(rubiks,1);
                 LEFT_anticlockwise(rubiks,2);
-            }else{
-                DOWN_clockwise(rubiks, 1);
-            }
+            }else bol = 1;
         }
 
         if((*rubiks)[F][2][1].color == W){
@@ -858,10 +852,10 @@ int Step1(Square **** rubiks){
                 DOWN_anticlockwise(rubiks,1);
                 RIGHT_clockwise(rubiks,1);
                 FRONT_anticlockwise(rubiks,2);
-            }else{
-                DOWN_clockwise(rubiks, 1);
-            }
+            }else bol = 1;
         }
+        if (bol)
+            DOWN_clockwise(rubiks,1);
 
         //case 3
         if((*rubiks)[F][1][2].color == W && (*rubiks)[F][1][1].color == (*rubiks)[R][1][0].color){
@@ -892,6 +886,36 @@ int Step1(Square **** rubiks){
             LEFT_anticlockwise(rubiks,2);
         }
 
+        //case 3 bis
+        if((*rubiks)[F][1][0].color == W && (*rubiks)[F][1][1].color == (*rubiks)[L][1][2].color){
+            LEFT_clockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            LEFT_anticlockwise(rubiks,1);
+            FRONT_clockwise(rubiks,2);
+        }
+
+        if((*rubiks)[R][1][0].color == W && (*rubiks)[R][1][1].color == (*rubiks)[F][1][2].color){
+            FRONT_clockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            FRONT_anticlockwise(rubiks,1);
+            RIGHT_clockwise(rubiks,2);
+        }
+
+        if((*rubiks)[B][1][0].color == W && (*rubiks)[B][1][1].color == (*rubiks)[R][1][2].color){
+            RIGHT_clockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            RIGHT_anticlockwise(rubiks,1);
+            BACK_clockwise(rubiks,2);
+        }
+
+        if((*rubiks)[L][1][0].color == W && (*rubiks)[L][1][1].color == (*rubiks)[B][1][2].color){
+            BACK_clockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            BACK_anticlockwise(rubiks,1);
+            LEFT_clockwise(rubiks,2);
+        }
+
+
         //case 4
         for (i=1;i<8;i+=2){
             if((*rubiks)[U][i/3][i%3].color == W){
@@ -915,6 +939,7 @@ int Step1(Square **** rubiks){
                 }
             }
         }
+        bol = 0;
         //case 5
         for (i=1;i<8;i+=2){
             if((*rubiks)[D][i/3][i%3].color == W){
@@ -923,32 +948,187 @@ int Step1(Square **** rubiks){
                         //
                         if((*rubiks)[F][2][1].color == (*rubiks)[F][1][1].color){
                             FRONT_clockwise(rubiks,2);
-                        }else
-                            DOWN_clockwise(rubiks,1);
+                        }else bol = 1;
                         break;
                     case 3:// case LEFT
-                        if((*rubiks)[L][2][1].color == (*rubiks)[F][1][1].color){
+                        if((*rubiks)[L][2][1].color == (*rubiks)[L][1][1].color){
                             LEFT_clockwise(rubiks,2);
-                        }else
-                            DOWN_clockwise(rubiks,1);
+                        }else bol = 1;
                         break;
                     case 5:// case RIGHT
                         if((*rubiks)[R][2][1].color == (*rubiks)[R][1][1].color){
                             RIGHT_clockwise(rubiks,2);
-                        }else
-                            DOWN_clockwise(rubiks,1);
+                        }else bol = 1;
                         break;
                     case 7:// case BACK
                         if((*rubiks)[B][2][1].color == (*rubiks)[B][1][1].color){
                             BACK_clockwise(rubiks,2);
-                        }else
-                            DOWN_clockwise(rubiks,1);
+                        }else bol = 1;
                         break;
                 }
             }
         }
+        if (bol)
+            DOWN_clockwise(rubiks,1);
 
 
+        //case 6
+        if((*rubiks)[F][1][2].color == (*rubiks)[F][1][1].color && (*rubiks)[R][1][0].color == W ){
+            FRONT_anticlockwise(rubiks,1);
+        }
+        if((*rubiks)[R][1][2].color == (*rubiks)[R][1][1].color && (*rubiks)[B][1][0].color == W ){
+            RIGHT_anticlockwise(rubiks,1);
+        }
+        if((*rubiks)[B][1][2].color == (*rubiks)[B][1][1].color && (*rubiks)[L][1][0].color == W ){
+            BACK_anticlockwise(rubiks,1);
+        }
+        if((*rubiks)[L][1][2].color == (*rubiks)[L][1][1].color && (*rubiks)[F][1][0].color == W ){
+            LEFT_anticlockwise(rubiks,1);
+        }
+
+        //case 6 bis
+        if((*rubiks)[F][1][0].color == (*rubiks)[F][1][1].color && (*rubiks)[L][1][2].color == W ){
+            FRONT_clockwise(rubiks,1);
+        }
+        if((*rubiks)[R][1][0].color == (*rubiks)[R][1][1].color && (*rubiks)[F][1][2].color == W ){
+            RIGHT_clockwise(rubiks,1);
+        }
+        if((*rubiks)[B][1][0].color == (*rubiks)[B][1][1].color && (*rubiks)[R][1][2].color == W ){
+            BACK_clockwise(rubiks,1);
+        }
+        if((*rubiks)[L][1][0].color == (*rubiks)[L][1][1].color && (*rubiks)[B][1][2].color == W ){
+            LEFT_clockwise(rubiks,1);
+        }
+
+        //case 7
+        if ((*rubiks)[F][0][1].color == W && (*rubiks)[U][2][1].color == (*rubiks)[R][1][1].color){
+            FRONT_clockwise(rubiks,1);
+            RIGHT_clockwise(rubiks,1);
+        }
+        if ((*rubiks)[R][0][1].color == W && (*rubiks)[U][1][2].color == (*rubiks)[B][1][1].color){
+            RIGHT_clockwise(rubiks,1);
+            BACK_clockwise(rubiks,1);
+        }
+        if ((*rubiks)[B][0][1].color == W && (*rubiks)[U][0][1].color == (*rubiks)[L][1][1].color){
+            BACK_clockwise(rubiks,1);
+            RIGHT_clockwise(rubiks,1);
+        }
+        if ((*rubiks)[L][0][1].color == W && (*rubiks)[U][1][0].color == (*rubiks)[F][1][1].color){
+            LEFT_clockwise(rubiks,1);
+            FRONT_clockwise(rubiks,1);
+        }
+        //case 7 bis
+        if ((*rubiks)[F][0][1].color == W && (*rubiks)[U][2][1].color == (*rubiks)[L][1][1].color){
+            FRONT_anticlockwise(rubiks,1);
+            LEFT_anticlockwise(rubiks,1);
+        }
+        if ((*rubiks)[R][0][1].color == W && (*rubiks)[U][1][2].color == (*rubiks)[F][1][1].color){
+            RIGHT_anticlockwise(rubiks,1);
+            FRONT_anticlockwise(rubiks,1);
+        }
+        if ((*rubiks)[B][0][1].color == W && (*rubiks)[U][0][1].color == (*rubiks)[R][1][1].color){
+            BACK_anticlockwise(rubiks,1);
+            RIGHT_anticlockwise(rubiks,1);
+        }
+        if ((*rubiks)[L][0][1].color == W && (*rubiks)[U][1][0].color == (*rubiks)[B][1][1].color){
+            LEFT_anticlockwise(rubiks,1);
+            BACK_anticlockwise(rubiks,1);
+        }
+
+
+        //case 8
+        if((*rubiks)[F][1][2].color != (*rubiks)[F][1][1].color && (*rubiks)[R][1][0].color == W ){
+            FRONT_clockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            FRONT_anticlockwise(rubiks,1);
+            DOWN_anticlockwise(rubiks,1);
+        }
+        if((*rubiks)[R][1][2].color != (*rubiks)[R][1][1].color && (*rubiks)[B][1][0].color == W ){
+            RIGHT_clockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            RIGHT_anticlockwise(rubiks,1);
+            DOWN_anticlockwise(rubiks,1);
+        }
+        if((*rubiks)[B][1][2].color != (*rubiks)[B][1][1].color && (*rubiks)[L][1][0].color == W ){
+            BACK_clockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            BACK_anticlockwise(rubiks,1);
+            DOWN_anticlockwise(rubiks,1);
+        }
+        if((*rubiks)[L][1][2].color != (*rubiks)[L][1][1].color && (*rubiks)[F][1][0].color == W ){
+            LEFT_clockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            LEFT_anticlockwise(rubiks,1);
+            DOWN_anticlockwise(rubiks,1);
+        }
+        //case 8bis
+        if((*rubiks)[F][1][0].color != (*rubiks)[F][1][1].color && (*rubiks)[L][1][2].color == W ){
+            FRONT_anticlockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            FRONT_clockwise(rubiks,1);
+            DOWN_anticlockwise(rubiks,1);
+        }
+        if((*rubiks)[R][1][2].color != (*rubiks)[R][1][1].color && (*rubiks)[F][1][2].color == W ){
+            RIGHT_anticlockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            RIGHT_clockwise(rubiks,1);
+            DOWN_anticlockwise(rubiks,1);
+        }
+        if((*rubiks)[B][1][2].color != (*rubiks)[B][1][1].color && (*rubiks)[R][1][2].color == W ){
+            BACK_anticlockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            BACK_clockwise(rubiks,1);
+            DOWN_anticlockwise(rubiks,1);
+        }
+        if((*rubiks)[L][1][2].color != (*rubiks)[L][1][1].color && (*rubiks)[B][1][2].color == W ){
+            LEFT_anticlockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            LEFT_clockwise(rubiks,1);
+            DOWN_anticlockwise(rubiks,1);
+        }
+
+        //case 9
+        if((*rubiks)[F][1][2].color == W && (*rubiks)[R][1][0].color != (*rubiks)[F][1][1].color){
+            FRONT_clockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            FRONT_anticlockwise(rubiks,1);
+        }
+        if((*rubiks)[R][1][2].color == W && (*rubiks)[B][1][0].color != (*rubiks)[R][1][1].color){
+            RIGHT_clockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            RIGHT_anticlockwise(rubiks,1);
+        }
+        if((*rubiks)[B][1][2].color == W && (*rubiks)[L][1][0].color != (*rubiks)[B][1][1].color){
+            BACK_clockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            BACK_anticlockwise(rubiks,1);
+        }
+        if((*rubiks)[L][1][2].color == W && (*rubiks)[F][1][0].color != (*rubiks)[L][1][1].color){
+            LEFT_clockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            LEFT_anticlockwise(rubiks,1);
+        }
+        //case 9bis
+        if((*rubiks)[F][1][2].color == W && (*rubiks)[L][1][2].color != (*rubiks)[F][1][1].color){
+            FRONT_anticlockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            FRONT_clockwise(rubiks,1);
+        }
+        if((*rubiks)[R][1][2].color == W && (*rubiks)[F][1][2].color != (*rubiks)[R][1][1].color){
+            RIGHT_anticlockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            RIGHT_clockwise(rubiks,1);
+        }
+        if((*rubiks)[B][1][2].color == W && (*rubiks)[R][1][2].color != (*rubiks)[B][1][1].color){
+            BACK_anticlockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            BACK_clockwise(rubiks,1);
+        }
+        if((*rubiks)[L][1][2].color == W && (*rubiks)[B][1][2].color != (*rubiks)[L][1][1].color){
+            LEFT_anticlockwise(rubiks,1);
+            DOWN_clockwise(rubiks,1);
+            LEFT_clockwise(rubiks,1);
+        }
 
 
     }
