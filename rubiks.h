@@ -52,6 +52,7 @@ void exchangeColors(Square * first,Square * second);
 
 //Resolution
 int Step1(Square **** rubiks);
+int Step2(Square **** rubiks);
 void editFaces(int* D,int* B,int* L,int* U,int* F,int* R,Square *** rubiks);
 
 #endif //PROJETC_RUBIKS_H
