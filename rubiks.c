@@ -894,6 +894,29 @@ int Step1(Square **** rubiks){
 
         //case 4
         for (i=1;i<8;i+=2){
+            if((*rubiks)[U][i/3][i%3].color == W){
+                switch (i) {
+                    case 1:// case BACK
+                        if((*rubiks)[B][0][1].color != (*rubiks)[B][1][1].color)
+                            BACK_clockwise(rubiks,2);
+                        break;
+                    case 3:// case LEFT
+                        if((*rubiks)[L][0][1].color != (*rubiks)[L][1][1].color)
+                            LEFT_clockwise(rubiks,2);
+                        break;
+                    case 5:// case RIGHT
+                        if((*rubiks)[R][0][1].color != (*rubiks)[R][1][1].color)
+                            RIGHT_clockwise(rubiks,2);
+                        break;
+                    case 7:// case FRONT
+                        if((*rubiks)[F][0][1].color != (*rubiks)[F][1][1].color)
+                            FRONT_clockwise(rubiks,2);
+                        break;
+                }
+            }
+        }
+        //case 5
+        for (i=1;i<8;i+=2){
             if((*rubiks)[D][i/3][i%3].color == W){
                 switch (i) {
                     case 1:// case FRONT
@@ -904,7 +927,7 @@ int Step1(Square **** rubiks){
                             DOWN_clockwise(rubiks,1);
                         break;
                     case 3:// case LEFT
-                        if((*rubiks)[L][2][1].color == (*rubiks)[F][L][1].color){
+                        if((*rubiks)[L][2][1].color == (*rubiks)[F][1][1].color){
                             LEFT_clockwise(rubiks,2);
                         }else
                             DOWN_clockwise(rubiks,1);
@@ -924,7 +947,6 @@ int Step1(Square **** rubiks){
                 }
             }
         }
-        //case 5
 
 
 
