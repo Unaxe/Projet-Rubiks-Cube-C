@@ -389,12 +389,12 @@ void FRONT_anticlockwise(Square **** rubiks,int type){
             (*rubiks)[D][0][2 - i].color = stock2;
             (*rubiks)[R][0 + i][0].color = stock;
         }
-        exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][0][2]));
-        exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][2][2]));
         exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][2][0]));
-        exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][1][2]));
-        exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][2][1]));
+        exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][2][2]));
+        exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][0][2]));
         exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][1][0]));
+        exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][2][1]));
+        exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][1][2]));
     }
     printf("Front-Anti-Clockwise-%d\n",type);
 }
@@ -419,12 +419,12 @@ void BACK_anticlockwise(Square **** rubiks,int type){
             (*rubiks)[D][2][0 + i].color = stock2;
             (*rubiks)[L][0 + i][0].color = stock;
         }
-        exchangeColors(&((*rubiks)[B][0][0]), &((*rubiks)[B][0][2]));
-        exchangeColors(&((*rubiks)[B][0][0]), &((*rubiks)[B][2][2]));
         exchangeColors(&((*rubiks)[B][0][0]), &((*rubiks)[B][2][0]));
-        exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][1][2]));
-        exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][2][1]));
+        exchangeColors(&((*rubiks)[B][0][0]), &((*rubiks)[B][2][2]));
+        exchangeColors(&((*rubiks)[B][0][0]), &((*rubiks)[B][0][2]));
         exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][1][0]));
+        exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][2][1]));
+        exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][1][2]));
     }
     printf("Back-Anti-Clockwise-%d\n",type);
 }
@@ -449,12 +449,12 @@ void UP_anticlockwise(Square **** rubiks,int type){
             (*rubiks)[F][0][2 - i].color = stock2;
             (*rubiks)[R][0][2-i].color = stock;
         }
-        exchangeColors(&((*rubiks)[U][0][0]), &((*rubiks)[U][0][2]));
-        exchangeColors(&((*rubiks)[U][0][0]), &((*rubiks)[U][2][2]));
         exchangeColors(&((*rubiks)[U][0][0]), &((*rubiks)[U][2][0]));
-        exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][1][2]));
-        exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][2][1]));
+        exchangeColors(&((*rubiks)[U][0][0]), &((*rubiks)[U][2][2]));
+        exchangeColors(&((*rubiks)[U][0][0]), &((*rubiks)[U][0][2]));
         exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][1][0]));
+        exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][2][1]));
+        exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][1][2]));
     }
     printf("Up-Anti-Clockwise-%d\n",type);
 }
@@ -479,12 +479,12 @@ void DOWN_anticlockwise(Square **** rubiks,int type){
             (*rubiks)[B][2][0+i].color = stock2;
             (*rubiks)[R][2][0+i].color = stock;
         }
-        exchangeColors(&((*rubiks)[D][0][0]), &((*rubiks)[D][0][2]));
-        exchangeColors(&((*rubiks)[D][0][0]), &((*rubiks)[D][2][2]));
         exchangeColors(&((*rubiks)[D][0][0]), &((*rubiks)[D][2][0]));
-        exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][1][2]));
-        exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][2][1]));
+        exchangeColors(&((*rubiks)[D][0][0]), &((*rubiks)[D][2][2]));
+        exchangeColors(&((*rubiks)[D][0][0]), &((*rubiks)[D][0][2]));
         exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][1][0]));
+        exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][2][1]));
+        exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][1][2]));
     }
     printf("Down-Anti-Clockwise-%d\n",type);
 }
@@ -509,12 +509,12 @@ void RIGHT_anticlockwise(Square **** rubiks,int type){
             (*rubiks)[D][2-i][2].color = stock2;
             (*rubiks)[B][0 + i][0].color = stock;
         }
-        exchangeColors(&((*rubiks)[R][0][0]), &((*rubiks)[R][0][2]));
-        exchangeColors(&((*rubiks)[R][0][0]), &((*rubiks)[R][2][2]));
         exchangeColors(&((*rubiks)[R][0][0]), &((*rubiks)[R][2][0]));
-        exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][1][2]));
-        exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][2][1]));
+        exchangeColors(&((*rubiks)[R][0][0]), &((*rubiks)[R][2][2]));
+        exchangeColors(&((*rubiks)[R][0][0]), &((*rubiks)[R][0][2]));
         exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][1][0]));
+        exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][2][1]));
+        exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][1][2]));
     }
     printf("Right-Anti-Clockwise-%d\n",type);
 }
@@ -539,12 +539,12 @@ void LEFT_anticlockwise(Square **** rubiks,int type){
             (*rubiks)[D][0+i][0].color = stock2;
             (*rubiks)[F][0 + i][0].color = stock;
         }
-        exchangeColors(&((*rubiks)[L][0][0]), &((*rubiks)[L][0][2]));
-        exchangeColors(&((*rubiks)[L][0][0]), &((*rubiks)[L][2][2]));
         exchangeColors(&((*rubiks)[L][0][0]), &((*rubiks)[L][2][0]));
-        exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][1][2]));
-        exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][2][1]));
+        exchangeColors(&((*rubiks)[L][0][0]), &((*rubiks)[L][2][2]));
+        exchangeColors(&((*rubiks)[L][0][0]), &((*rubiks)[L][0][2]));
         exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][1][0]));
+        exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][2][1]));
+        exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][1][2]));
     }
     printf("Left-Anti-Clockwise-%d\n",type);
 }
@@ -565,19 +565,17 @@ void horizontal_rotation(Square **** rubiks){
     F = side_to_index('F', *rubiks);
     R = side_to_index('R', *rubiks);
 
-    for(i = 0;i<6;i++){
-        reverseFace(&((*rubiks)[i]));
-    }
-
+    reverseFace(&((*rubiks)[U]));
+    reverseFace(&((*rubiks)[D]));
 
     for(i = 0;i<3;i++){
         for(j=0;j<3;j++){
-            (*rubiks)[D][i][j].side = UP;
+            (*rubiks)[F][i][j].side = BACK;
         }
     }
     for(i = 0;i<3;i++){
         for(j=0;j<3;j++){
-            (*rubiks)[U][i][j].side = DOWN;
+            (*rubiks)[B][i][j].side = FRONT;
         }
     }
     for(i = 0;i<3;i++){
@@ -602,21 +600,23 @@ void vertical_rotation(Square **** rubiks){
     F = side_to_index('F', *rubiks);
     R = side_to_index('R', *rubiks);
 
+    reverseFace(&((*rubiks)[B]));
+    reverseFace(&((*rubiks)[F]));
+    reverseFace(&((*rubiks)[L]));
+    reverseFace(&((*rubiks)[R]));
+
     for(i = 0;i<3;i++){
         for(j=0;j<3;j++){
             (*rubiks)[D][i][j].side = UP;
         }
     }
+
     for(i = 0;i<3;i++){
         for(j=0;j<3;j++){
             (*rubiks)[U][i][j].side = DOWN;
         }
     }
 
-    reverseFace(&((*rubiks)[D]));
-    reverseFace(&((*rubiks)[U]));
-    reverseFace(&((*rubiks)[L]));
-    reverseFace(&((*rubiks)[R]));
 
     for(i = 0;i<3;i++){
         for(j=0;j<3;j++){

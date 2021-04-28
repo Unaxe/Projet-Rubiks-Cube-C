@@ -5,11 +5,10 @@ int main() {
     printf("Created\n");
     init_rubiks(&rubiks);
     printf("Inited\n");
-    display_rubiks(rubiks);
     scramble_rubiks(&rubiks);
-    for(int i = 0;i<10;i++){
-        move_menu(&rubiks);
+    for(int i = 0;i<100;i++){
         display_rubiks(rubiks);
+        move_menu(&rubiks);
     }
     if(Step1(&rubiks));
     display_rubiks(rubiks);
