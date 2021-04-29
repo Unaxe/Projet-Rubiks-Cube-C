@@ -640,11 +640,11 @@ void exchangeColors(Square * first,Square * second){
     second->color = stock;
 }
 
-void scramble_rubiks(Square **** rubiks){
+void scramble_rubiks(Square **** rubiks,int numb){
     srand(time(NULL));
     int hasard,i;
     const int MAX = 14, MIN = 1;
-    for(i = 0;i<100;i++){
+    for(i = 0;i<numb;i++){
         hasard = (rand() % (MAX - MIN + 1)) + MIN;
         switch (hasard) {
             case 1 :
@@ -712,6 +712,7 @@ void move_menu(Square **** rubiks){
            "12.D'\n"
            "13.horizontal rotation\n"
            "14.vertical rotation\n");
+    fflush(stdin);
     scanf("%d",&choice);
     switch (choice) {
         case 1 :
@@ -756,6 +757,9 @@ void move_menu(Square **** rubiks){
         case 14:
             vertical_rotation(rubiks);
             break;
+        case 15:
+            if (Step1(rubiks))
+                if(Step2(rubiks));
         default:
             printf("Erreur\n");
 }
@@ -779,7 +783,7 @@ int Step1(Square **** rubiks){
     while(((*rubiks)[U][0][1].color != W || ((*rubiks)[B][0][1].color != (*rubiks)[B][1][1].color)) || ((*rubiks)[U][1][2].color != W || ((*rubiks)[R][0][1].color != (*rubiks)[R][1][1].color)) || ((*rubiks)[U][1][0].color != W || ((*rubiks)[L][0][1].color != (*rubiks)[L][1][1].color)) || ((*rubiks)[U][2][1].color != W || ((*rubiks)[F][0][1].color != (*rubiks)[F][1][1].color))   ) {
         cpt ++;
         if (cpt>= 1000) {
-            scramble_rubiks(rubiks);
+            scramble_rubiks(rubiks,15);
             cpt = 0;
         }
 
@@ -1144,7 +1148,10 @@ int Step2(Square **** rubiks){
     int D,B,L,U,F,R,i,j,bol,cpt;
     editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
 
-    while((*rubiks)[U][0][0].color != W || (*rubiks)[U][0][1].color != W || (*rubiks)[U][0][2].color != W || (*rubiks)[U][1][0].color != W || (*rubiks)[U][1][1].color != W || (*rubiks)[U][1][2].color != W || (*rubiks)[U][2][0].color != W || (*rubiks)[U][2][1].color != W || (*rubiks)[U][2][2].color != W ) {
+    if(!((*rubiks)[U][0][0].color != W || (*rubiks)[U][0][1].color != W || (*rubiks)[U][0][2].color != W || (*rubiks)[U][1][0].color != W || (*rubiks)[U][1][1].color != W || (*rubiks)[U][1][2].color != W || (*rubiks)[U][2][0].color != W || (*rubiks)[U][2][1].color != W || (*rubiks)[U][2][2].color != W || !((*rubiks)[F][0][0].color == (*rubiks)[F][1][1].color && (*rubiks)[F][0][1].color == (*rubiks)[F][1][1].color && (*rubiks)[F][0][2].color == (*rubiks)[F][1][1].color && (*rubiks)[R][0][0].color == (*rubiks)[R][1][1].color && (*rubiks)[R][0][1].color == (*rubiks)[R][1][1].color && (*rubiks)[R][0][2].color == (*rubiks)[R][1][1].color && (*rubiks)[B][0][0].color == (*rubiks)[B][1][1].color && (*rubiks)[B][0][1].color == (*rubiks)[B][1][1].color && (*rubiks)[B][0][2].color == (*rubiks)[B][1][1].color && (*rubiks)[L][0][0].color == (*rubiks)[L][1][1].color && (*rubiks)[L][0][1].color == (*rubiks)[L][1][1].color && (*rubiks)[L][0][2].color == (*rubiks)[L][1][1].color)))
+        return 1;
+
+    while((*rubiks)[U][0][0].color != W || (*rubiks)[U][0][1].color != W || (*rubiks)[U][0][2].color != W || (*rubiks)[U][1][0].color != W || (*rubiks)[U][1][1].color != W || (*rubiks)[U][1][2].color != W || (*rubiks)[U][2][0].color != W || (*rubiks)[U][2][1].color != W || (*rubiks)[U][2][2].color != W || !((*rubiks)[F][0][0].color == (*rubiks)[F][1][1].color && (*rubiks)[F][0][1].color == (*rubiks)[F][1][1].color && (*rubiks)[F][0][2].color == (*rubiks)[F][1][1].color && (*rubiks)[R][0][0].color == (*rubiks)[R][1][1].color && (*rubiks)[R][0][1].color == (*rubiks)[R][1][1].color && (*rubiks)[R][0][2].color == (*rubiks)[R][1][1].color && (*rubiks)[B][0][0].color == (*rubiks)[B][1][1].color && (*rubiks)[B][0][1].color == (*rubiks)[B][1][1].color && (*rubiks)[B][0][2].color == (*rubiks)[B][1][1].color && (*rubiks)[L][0][0].color == (*rubiks)[L][1][1].color && (*rubiks)[L][0][1].color == (*rubiks)[L][1][1].color && (*rubiks)[L][0][2].color == (*rubiks)[L][1][1].color)) {
         display_rubiks(*rubiks);
         if ((*rubiks)[U][1][1].color == Y) {
             vertical_rotation(rubiks);
@@ -1254,6 +1261,39 @@ int Step2(Square **** rubiks){
         }
     }
     return 0;
-
 }
 
+int menu(Square **** rubiks){
+    int choice;
+    printf("---------------------------------------------------------------------------\n"
+           "1 : Scramble    2:Reset    3:Blank    4:Play    5:Fill    6:Solve    7:Exit\n"
+           "---------------------------------------------------------------------------\n");
+    fflush(stdin);
+    scanf("%d",&choice);
+    switch(choice){
+        case 1:
+            scramble_rubiks(rubiks,100);
+            break;
+        case 2:
+            init_rubiks(rubiks);
+            break;
+        case 3:
+            blank_rubiks(rubiks);
+            break;
+        case 4:
+            move_menu(rubiks);
+            break;
+        case 5:
+            //fillRubiks
+            break;
+        case 6:
+            if (Step1(rubiks))
+                if (Step2(rubiks));
+            break;
+        case 7:
+            return 0;
+        default:
+            printf("Error\n");
+    }
+    return 1;
+}
