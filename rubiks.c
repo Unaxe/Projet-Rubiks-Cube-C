@@ -218,7 +218,8 @@ void FRONT_clockwise(Square **** rubiks,int type){
         exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][2][1]));
         exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][1][0]));
     }
-    printf("Front-Clockwise-%d\n",type);
+    if (DEBUG_MOVEMENTS)
+        printf("Front-Clockwise-%d\n",type);
 }
 
 void UP_clockwise(Square **** rubiks,int type){
@@ -247,7 +248,8 @@ void UP_clockwise(Square **** rubiks,int type){
         exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][2][1]));
         exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][1][0]));
     }
-    printf("Up-Clockwise-%d\n",type);
+    if (DEBUG_MOVEMENTS)
+        printf("Up-Clockwise-%d\n",type);
 }
 
 void BACK_clockwise(Square **** rubiks,int type) {
@@ -276,7 +278,8 @@ void BACK_clockwise(Square **** rubiks,int type) {
         exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][2][1]));
         exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][1][0]));
     }
-    printf("Back-Clockwise-%d\n",type);
+    if(DEBUG_MOVEMENTS)
+        printf("Back-Clockwise-%d\n",type);
 }
 
 void DOWN_clockwise(Square **** rubiks,int type) {
@@ -306,7 +309,8 @@ void DOWN_clockwise(Square **** rubiks,int type) {
         exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][2][1]));
         exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][1][0]));
     }
-    printf("Down-Clockwise-%d\n",type);
+    if(DEBUG_MOVEMENTS)
+        printf("Down-Clockwise-%d\n",type);
 }
 
 void RIGHT_clockwise(Square **** rubiks,int type) {
@@ -336,7 +340,8 @@ void RIGHT_clockwise(Square **** rubiks,int type) {
         exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][2][1]));
         exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][1][0]));
     }
-    printf("Right-Clockwise-%d\n",type);
+    if(DEBUG_MOVEMENTS)
+        printf("Right-Clockwise-%d\n",type);
 }
 
 void LEFT_clockwise(Square **** rubiks,int type){
@@ -366,7 +371,8 @@ void LEFT_clockwise(Square **** rubiks,int type){
         exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][2][1]));
         exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][1][0]));
     }
-    printf("Left-Clockwise-%d\n",type);
+    if(DEBUG_MOVEMENTS)
+        printf("Left-Clockwise-%d\n",type);
 }
 
 void FRONT_anticlockwise(Square **** rubiks,int type){
@@ -396,7 +402,8 @@ void FRONT_anticlockwise(Square **** rubiks,int type){
         exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][2][1]));
         exchangeColors(&((*rubiks)[F][0][1]), &((*rubiks)[F][1][2]));
     }
-    printf("Front-Anti-Clockwise-%d\n",type);
+    if(DEBUG_MOVEMENTS)
+        printf("Front-Anti-Clockwise-%d\n",type);
 }
 
 void BACK_anticlockwise(Square **** rubiks,int type){
@@ -426,7 +433,8 @@ void BACK_anticlockwise(Square **** rubiks,int type){
         exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][2][1]));
         exchangeColors(&((*rubiks)[B][0][1]), &((*rubiks)[B][1][2]));
     }
-    printf("Back-Anti-Clockwise-%d\n",type);
+    if(DEBUG_MOVEMENTS)
+        printf("Back-Anti-Clockwise-%d\n",type);
 }
 
 void UP_anticlockwise(Square **** rubiks,int type){
@@ -456,7 +464,8 @@ void UP_anticlockwise(Square **** rubiks,int type){
         exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][2][1]));
         exchangeColors(&((*rubiks)[U][0][1]), &((*rubiks)[U][1][2]));
     }
-    printf("Up-Anti-Clockwise-%d\n",type);
+    if(DEBUG_MOVEMENTS)
+        printf("Up-Anti-Clockwise-%d\n",type);
 }
 
 void DOWN_anticlockwise(Square **** rubiks,int type){
@@ -486,7 +495,8 @@ void DOWN_anticlockwise(Square **** rubiks,int type){
         exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][2][1]));
         exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][1][2]));
     }
-    printf("Down-Anti-Clockwise-%d\n",type);
+    if(DEBUG_MOVEMENTS)
+        printf("Down-Anti-Clockwise-%d\n",type);
 }
 
 void RIGHT_anticlockwise(Square **** rubiks,int type){
@@ -516,7 +526,8 @@ void RIGHT_anticlockwise(Square **** rubiks,int type){
         exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][2][1]));
         exchangeColors(&((*rubiks)[R][0][1]), &((*rubiks)[R][1][2]));
     }
-    printf("Right-Anti-Clockwise-%d\n",type);
+    if(DEBUG_MOVEMENTS)
+        printf("Right-Anti-Clockwise-%d\n",type);
 }
 
 void LEFT_anticlockwise(Square **** rubiks,int type){
@@ -546,7 +557,8 @@ void LEFT_anticlockwise(Square **** rubiks,int type){
         exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][2][1]));
         exchangeColors(&((*rubiks)[L][0][1]), &((*rubiks)[L][1][2]));
     }
-    printf("Left-Anti-Clockwise-%d\n",type);
+    if(DEBUG_MOVEMENTS)
+        printf("Left-Anti-Clockwise-%d\n",type);
 }
 
 void reverseFace(Square *** Face){
@@ -588,7 +600,8 @@ void horizontal_rotation(Square **** rubiks){
             (*rubiks)[R][i][j].side = LEFT;
         }
     }
-    printf("Horizontal-Rotation\n");
+    if(DEBUG_MOVEMENTS)
+        printf("Horizontal-Rotation\n");
 }
 
 void vertical_rotation(Square **** rubiks){
@@ -629,7 +642,8 @@ void vertical_rotation(Square **** rubiks){
             (*rubiks)[B][i][j].side = FRONT;
         }
     }
-    printf("Vertical-Rotation\n");
+    if(DEBUG_MOVEMENTS)
+        printf("Vertical-Rotation\n");
 
 }
 

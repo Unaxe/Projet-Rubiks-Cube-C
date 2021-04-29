@@ -13,6 +13,7 @@
 typedef enum T_COLOR T_COLOR;
 typedef enum T_SIDE T_SIDE;
 typedef struct Square Square;
+#define DEBUG_MOVEMENTS 0
 
 int select_color(char color);
 Square *** create_rubiks();
