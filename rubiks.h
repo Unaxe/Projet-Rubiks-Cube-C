@@ -44,7 +44,7 @@ void LEFT_anticlockwise(Square **** rubiks,int type);
 void reverseFace(Square *** Face);
 void horizontal_rotation(Square **** rubiks);
 void vertical_rotation(Square **** rubiks);
-
+void quarterTurnRight(Square **** rubiks);
 
 void scramble_rubiks(Square **** rubiks,int numb);
 void move_menu(Square **** rubiks);
@@ -56,6 +56,7 @@ void exchangeColors(Square * first,Square * second);
 int Step1(Square **** rubiks);
 int Step2(Square **** rubiks);
 int Step3(Square **** rubiks);
+int Step4(Square **** rubiks);
 
 void editFaces(int* D,int* B,int* L,int* U,int* F,int* R,Square *** rubiks);
 
