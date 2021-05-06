@@ -57,6 +57,7 @@ int Step1(Square **** rubiks);
 int Step2(Square **** rubiks);
 int Step3(Square **** rubiks);
 int Step4(Square **** rubiks);
+int Step5(Square **** rubiks);
 
 void editFaces(int* D,int* B,int* L,int* U,int* F,int* R,Square *** rubiks);
 

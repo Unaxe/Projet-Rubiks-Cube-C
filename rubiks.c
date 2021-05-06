@@ -801,11 +801,15 @@ int Step1(Square **** rubiks){
     while(((*rubiks)[U][0][1].color != W || ((*rubiks)[B][0][1].color != (*rubiks)[B][1][1].color)) || ((*rubiks)[U][1][2].color != W || ((*rubiks)[R][0][1].color != (*rubiks)[R][1][1].color)) || ((*rubiks)[U][1][0].color != W || ((*rubiks)[L][0][1].color != (*rubiks)[L][1][1].color)) || ((*rubiks)[U][2][1].color != W || ((*rubiks)[F][0][1].color != (*rubiks)[F][1][1].color))   ) {
         cpt ++;
         if (cpt>= 1000) {
+            display_rubiks(*rubiks);
             scramble_rubiks(rubiks,15);
             cpt = 0;
         }
 
-
+        if ((*rubiks)[U][1][1].color == Y) {
+            vertical_rotation(rubiks);
+            editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
+        }
 
         //case 1
         for(z = 0;z<4;z++) {
@@ -1080,7 +1084,9 @@ int menu(Square **** rubiks){
         case 6:
             if (Step1(rubiks))
                 if (Step2(rubiks))
-                    if(Step3(rubiks));
+                    if(Step3(rubiks))
+                        if(Step4(rubiks))
+                            if(Step5(rubiks));
             break;
         case 7:
             return 0;
@@ -1187,19 +1193,23 @@ int Step3(Square **** rubiks){
 }
 
 int Step4(Square **** rubiks){
-    int D,B,L,U,F,R,i,cpt = 0;
+    int D,B,L,U,F,R,i,cpt = 0,z,bol;
     editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
+    if(!((*rubiks)[U][0][1].color != Y || (*rubiks)[U][1][0].color != Y || (*rubiks)[U][1][2].color != Y || (*rubiks)[U][2][1].color != Y || (*rubiks)[F][0][1].color != (*rubiks)[F][1][1].color || (*rubiks)[R][0][1].color != (*rubiks)[R][1][1].color || (*rubiks)[B][0][1].color != (*rubiks)[B][1][1].color || (*rubiks)[L][0][1].color != (*rubiks)[L][1][1].color))
+        return 1;
+
 
     while((*rubiks)[U][0][1].color != Y || (*rubiks)[U][1][0].color != Y || (*rubiks)[U][1][2].color != Y || (*rubiks)[U][2][1].color != Y || (*rubiks)[F][0][1].color != (*rubiks)[F][1][1].color || (*rubiks)[R][0][1].color != (*rubiks)[R][1][1].color || (*rubiks)[B][0][1].color != (*rubiks)[B][1][1].color || (*rubiks)[L][0][1].color != (*rubiks)[L][1][1].color){
-        display_rubiks(*rubiks);
-
+        //compter le nombre de cubes de la croix bien placés
         cpt = 0;
         for(i = 1;i<8; i+=2){
             if((*rubiks)[U][i/3][i%3].color == Y)
                 cpt++;
         }
+        display_rubiks(*rubiks);
 
         switch (cpt) {
+            //dans les cas 1 ou 2, la croix n'est pas encore faite, si c'est cas 4, alors résoudre bien orienter la croix
             case 0:
                 RIGHT_anticlockwise(rubiks,1);
                 UP_anticlockwise(rubiks,1);
@@ -1256,66 +1266,48 @@ int Step4(Square **** rubiks){
                 }
                 break;
             case 4:
-                //compter le nombre d'arretes bien orientées
                 cpt = 0;
-                if((*rubiks)[F][0][1].color == (*rubiks)[F][1][1].color )
+                if ((*rubiks)[F][0][1].color == (*rubiks)[F][1][1].color )
                     cpt++;
-                if((*rubiks)[R][0][1].color == (*rubiks)[R][1][1].color )
+                if ((*rubiks)[R][0][1].color == (*rubiks)[R][1][1].color )
                     cpt++;
-                if((*rubiks)[B][0][1].color == (*rubiks)[B][1][1].color )
+                if ((*rubiks)[L][0][1].color == (*rubiks)[L][1][1].color )
                     cpt++;
-                if((*rubiks)[L][0][1].color == (*rubiks)[L][1][1].color )
+                if ((*rubiks)[B][0][1].color == (*rubiks)[B][1][1].color )
                     cpt++;
-
-                if(cpt!=2 && cpt != 4)
-                    UP_clockwise(rubiks,1);
-
-                if(cpt == 2) {
-                    if ((*rubiks)[F][0][1].color == (*rubiks)[F][1][1].color && (*rubiks)[B][0][1].color == (*rubiks)[B][1][1].color) {
-                        RIGHT_clockwise(rubiks, 1);
-                        UP_clockwise(rubiks, 2);
-                        RIGHT_anticlockwise(rubiks, 1);
-                        UP_anticlockwise(rubiks, 1);
-                        RIGHT_clockwise(rubiks, 1);
-                        UP_anticlockwise(rubiks, 1);
-                        RIGHT_anticlockwise(rubiks, 1);
-                    }
-                    if ((*rubiks)[R][0][1].color == (*rubiks)[R][1][1].color && (*rubiks)[L][0][1].color == (*rubiks)[L][1][1].color){
-                        BACK_clockwise(rubiks,1);
-                        UP_clockwise(rubiks,2);
-                        BACK_anticlockwise(rubiks,1);
-                        UP_anticlockwise(rubiks,1);
-                        BACK_clockwise(rubiks,1);
-                        UP_anticlockwise(rubiks,1);
-                        BACK_anticlockwise(rubiks,1);
-                    }
-
-                    if(((*rubiks)[F][0][1].color == (*rubiks)[F][1][1].color && (*rubiks)[R][0][1].color == (*rubiks)[R][1][1].color) || ((*rubiks)[B][0][1].color == (*rubiks)[B][1][1].color && (*rubiks)[R][0][1].color == (*rubiks)[R][1][1].color)  ){
-                        horizontal_rotation(rubiks);
+                if(cpt == 2){
+                    bol = 1;
+                    for(z = 0;z<4 && bol;z++){
+                        if((*rubiks)[L][0][1].color == (*rubiks)[L][1][1].color && (*rubiks)[B][0][1].color == (*rubiks)[B][1][1].color){ // deux cotés cotes a cote
+                            RIGHT_clockwise(rubiks,1);
+                            UP_clockwise(rubiks,2);
+                            RIGHT_anticlockwise(rubiks,1);
+                            UP_anticlockwise(rubiks,1);
+                            RIGHT_clockwise(rubiks,1);
+                            UP_anticlockwise(rubiks,1);
+                            RIGHT_anticlockwise(rubiks,1);
+                            UP_anticlockwise(rubiks,1);
+                            bol = 0;
+                        }else if((*rubiks)[F][0][1].color == (*rubiks)[F][1][1].color && (*rubiks)[B][0][1].color == (*rubiks)[B][1][1].color){ // deux cotés opposés
+                            RIGHT_clockwise(rubiks,1);
+                            UP_clockwise(rubiks,2);
+                            RIGHT_anticlockwise(rubiks,1);
+                            UP_anticlockwise(rubiks,1);
+                            RIGHT_clockwise(rubiks,1);
+                            UP_anticlockwise(rubiks,1);
+                            RIGHT_anticlockwise(rubiks,1);
+                            bol = 0;
+                        }
+                        quarterTurnRight(rubiks);
                         editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
                     }
-                    if(((*rubiks)[L][0][1].color == (*rubiks)[L][1][1].color) && ((*rubiks)[B][0][1].color == (*rubiks)[B][1][1].color )){
-                        RIGHT_clockwise(rubiks,1);
-                        UP_clockwise(rubiks,2);
-                        RIGHT_anticlockwise(rubiks,2);
-                        UP_anticlockwise(rubiks,1);
-                        RIGHT_clockwise(rubiks,1);
-                        UP_anticlockwise(rubiks,1);
-                        RIGHT_anticlockwise(rubiks,1);
-                        UP_anticlockwise(rubiks,1);
-                    }
-                    if(((*rubiks)[L][0][1].color == (*rubiks)[L][1][1].color) && ((*rubiks)[F][0][1].color == (*rubiks)[F][1][1].color )){
-                        BACK_clockwise(rubiks,1);
-                        UP_clockwise(rubiks,2);
-                        BACK_anticlockwise(rubiks,2);
-                        UP_anticlockwise(rubiks,1);
-                        BACK_clockwise(rubiks,1);
-                        UP_anticlockwise(rubiks,1);
-                        BACK_anticlockwise(rubiks,1);
-                        UP_anticlockwise(rubiks,1);
-                    }
-
+                }else{
+                    UP_clockwise(rubiks,1);
                 }
+
+
+
+
                 break;
 
         }
@@ -1323,7 +1315,6 @@ int Step4(Square **** rubiks){
     }
     return 0;
 }
-
 
 void quarterTurnRight(Square **** rubiks){
     int D,B,L,U,F,R,i,j;
@@ -1370,4 +1361,84 @@ void quarterTurnRight(Square **** rubiks){
     exchangeColors(&((*rubiks)[D][0][1]), &((*rubiks)[D][1][2]));
 
 
+}
+
+int Step5(Square **** rubiks){
+    int D,B,L,U,F,R,i,cpt = 0,z,bol;
+    editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
+
+    while(cpt != 4){
+        cpt = 0;
+        display_rubiks(*rubiks);
+        for(z = 0;z<4;z++){
+            if(((*rubiks)[F][1][1].color == (*rubiks)[F][0][0].color || (*rubiks)[F][1][1].color == (*rubiks)[L][0][2].color || (*rubiks)[F][1][1].color == (*rubiks)[U][2][0].color  )
+            &&  ((*rubiks)[U][1][1].color == (*rubiks)[F][0][0].color || (*rubiks)[U][1][1].color == (*rubiks)[L][0][2].color || (*rubiks)[U][1][1].color == (*rubiks)[U][2][0].color)
+            &&  ((*rubiks)[L][1][1].color == (*rubiks)[F][0][0].color || (*rubiks)[L][1][1].color == (*rubiks)[L][0][2].color || (*rubiks)[L][1][1].color == (*rubiks)[U][2][0].color  )){
+                cpt++;
+            }
+            quarterTurnRight(rubiks);
+            editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
+        }
+        printf("%d\n",cpt);
+        if(cpt == 0){
+            LEFT_anticlockwise(rubiks,1);
+            UP_clockwise(rubiks,1);
+            RIGHT_clockwise(rubiks,1);
+            UP_anticlockwise(rubiks,1);
+            LEFT_clockwise(rubiks,1);
+            UP_clockwise(rubiks,1);
+            RIGHT_anticlockwise(rubiks,1);
+            UP_anticlockwise(rubiks,1);
+        }
+        if(cpt == 1){
+            bol = 1;
+            for(z = 0;z<4 && bol;z++){
+                //cas du coin Front/Up/Left bien placé et rotation sens horaire des autres coins
+                if(((((*rubiks)[F][1][1].color == (*rubiks)[F][0][0].color || (*rubiks)[F][1][1].color == (*rubiks)[L][0][2].color || (*rubiks)[F][1][1].color == (*rubiks)[U][2][0].color  )// Si le coin en haut a gauche est bien placé //couleur de la face front
+                     &&  ((*rubiks)[U][1][1].color == (*rubiks)[F][0][0].color || (*rubiks)[U][1][1].color == (*rubiks)[L][0][2].color || (*rubiks)[U][1][1].color == (*rubiks)[U][2][0].color)
+                     &&  ((*rubiks)[L][1][1].color == (*rubiks)[F][0][0].color || (*rubiks)[L][1][1].color == (*rubiks)[L][0][2].color || (*rubiks)[L][1][1].color == (*rubiks)[U][2][0].color  )))
+                &&
+                        (((*rubiks)[B][1][1].color == (*rubiks)[R][0][2].color || (*rubiks)[B][1][1].color == (*rubiks)[B][0][0].color || (*rubiks)[B][1][1].color == (*rubiks)[U][0][2].color)
+                         &&((*rubiks)[U][1][1].color == (*rubiks)[R][0][2].color || (*rubiks)[U][1][1].color == (*rubiks)[B][0][0].color || (*rubiks)[U][1][1].color == (*rubiks)[U][0][2].color)
+                         &&((*rubiks)[L][1][1].color == (*rubiks)[R][0][2].color || (*rubiks)[L][1][1].color == (*rubiks)[B][0][0].color || (*rubiks)[L][1][1].color == (*rubiks)[U][0][2].color))) {
+                    bol = 0;
+                    printf("case 1\n");
+                    RIGHT_clockwise(rubiks,1);
+                    UP_anticlockwise(rubiks,1);
+                    LEFT_anticlockwise(rubiks,1);
+                    UP_clockwise(rubiks,1);
+                    RIGHT_anticlockwise(rubiks,1);
+                    UP_anticlockwise(rubiks,1);
+                    LEFT_clockwise(rubiks,1);
+                    UP_anticlockwise(rubiks,1);//cas 2
+                }else if((((*rubiks)[F][1][1].color == (*rubiks)[F][0][2].color || (*rubiks)[F][1][1].color == (*rubiks)[R][0][0].color || (*rubiks)[F][1][1].color == (*rubiks)[U][2][2].color )
+                        &&((*rubiks)[U][1][1].color == (*rubiks)[F][0][2].color || (*rubiks)[U][1][1].color == (*rubiks)[R][0][0].color || (*rubiks)[U][1][1].color == (*rubiks)[U][2][2].color)
+                        &&((*rubiks)[R][1][1].color == (*rubiks)[F][0][2].color || (*rubiks)[R][1][1].color == (*rubiks)[R][0][0].color || (*rubiks)[R][1][1].color == (*rubiks)[U][2][2].color))
+                        &&
+                        (((*rubiks)[B][1][1].color == (*rubiks)[L][0][0].color || (*rubiks)[B][1][1].color == (*rubiks)[B][0][2].color || (*rubiks)[B][1][1].color == (*rubiks)[U][0][0].color)//verifier la rotation
+                         &&((*rubiks)[R][1][1].color == (*rubiks)[L][0][0].color || (*rubiks)[R][1][1].color == (*rubiks)[B][0][2].color || (*rubiks)[R][1][1].color == (*rubiks)[U][0][0].color)
+                         &&((*rubiks)[U][1][1].color == (*rubiks)[L][0][0].color || (*rubiks)[U][1][1].color == (*rubiks)[B][0][2].color || (*rubiks)[U][1][1].color == (*rubiks)[U][0][0].color))) {//coin haut droit
+                    bol = 0;
+                    printf("case 2\n");
+                    LEFT_anticlockwise(rubiks,1);
+                    UP_clockwise(rubiks,1);
+                    RIGHT_clockwise(rubiks,1);
+                    UP_anticlockwise(rubiks,1);
+                    LEFT_clockwise(rubiks,1);// cas 1
+                    UP_clockwise(rubiks,1);
+                    RIGHT_anticlockwise(rubiks,1);
+                    UP_anticlockwise(rubiks,1);
+                }
+
+
+
+                quarterTurnRight(rubiks);
+                editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
+            }
+        }
+
+
+    }
+
+    return 0;
 }
