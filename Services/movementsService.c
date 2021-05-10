@@ -2,7 +2,7 @@
 // Created by pmher on 10/05/2021.
 //
 
-#include "movementsService.h"
+#include "../Headers/movementsService.h"
 
 
 void FRONT_clockwise(Square **** rubiks,int type){

@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/conio.c" "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/cmake-build-debug/CMakeFiles/ProjetC.dir/conio.c.obj"
-  "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/enumTypesServices.c" "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/cmake-build-debug/CMakeFiles/ProjetC.dir/enumTypesServices.c.obj"
-  "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/main.c" "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/cmake-build-debug/CMakeFiles/ProjetC.dir/main.c.obj"
-  "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/movementsService.c" "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/cmake-build-debug/CMakeFiles/ProjetC.dir/movementsService.c.obj"
-  "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/representationService.c" "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/cmake-build-debug/CMakeFiles/ProjetC.dir/representationService.c.obj"
-  "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/resolutionService.c" "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/cmake-build-debug/CMakeFiles/ProjetC.dir/resolutionService.c.obj"
-  "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/rubiks.c" "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/cmake-build-debug/CMakeFiles/ProjetC.dir/rubiks.c.obj"
+  "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/conio.c" "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/cmake-build-debug/CMakeFiles/ProjetC.dir/Services/conio.c.obj"
+  "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/enumTypesServices.c" "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/cmake-build-debug/CMakeFiles/ProjetC.dir/Services/enumTypesServices.c.obj"
+  "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/main.c" "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/cmake-build-debug/CMakeFiles/ProjetC.dir/Services/main.c.obj"
+  "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/movementsService.c" "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/cmake-build-debug/CMakeFiles/ProjetC.dir/Services/movementsService.c.obj"
+  "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/representationService.c" "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/cmake-build-debug/CMakeFiles/ProjetC.dir/Services/representationService.c.obj"
+  "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/resolutionService.c" "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/cmake-build-debug/CMakeFiles/ProjetC.dir/Services/resolutionService.c.obj"
+  "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/rubiks.c" "C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/cmake-build-debug/CMakeFiles/ProjetC.dir/Services/rubiks.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

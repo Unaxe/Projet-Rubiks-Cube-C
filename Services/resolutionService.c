@@ -2,7 +2,7 @@
 // Created by pmher on 10/05/2021.
 //
 
-#include "resolutionService.h"
+#include "../Headers/resolutionService.h"
 
 int Step1(Square **** rubiks){
     int D,B,L,U,F,R,i,j,bol,cpt = 0,z;

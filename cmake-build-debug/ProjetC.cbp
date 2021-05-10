@@ -74,46 +74,46 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/conio.c">
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/conio.h">
 			<Option target="ProjetC"/>
 		</Unit>
-		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/conio.h">
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/enumTypesServices.h">
 			<Option target="ProjetC"/>
 		</Unit>
-		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/enumTypesServices.c">
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/movementsService.h">
 			<Option target="ProjetC"/>
 		</Unit>
-		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/enumTypesServices.h">
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/representationService.h">
 			<Option target="ProjetC"/>
 		</Unit>
-		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/main.c">
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/resolutionService.h">
 			<Option target="ProjetC"/>
 		</Unit>
-		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/movementsService.c">
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/rubiks.h">
 			<Option target="ProjetC"/>
 		</Unit>
-		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/movementsService.h">
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/typedefs.h">
 			<Option target="ProjetC"/>
 		</Unit>
-		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/representationService.c">
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/conio.c">
 			<Option target="ProjetC"/>
 		</Unit>
-		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/representationService.h">
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/enumTypesServices.c">
 			<Option target="ProjetC"/>
 		</Unit>
-		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/resolutionService.c">
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/main.c">
 			<Option target="ProjetC"/>
 		</Unit>
-		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/resolutionService.h">
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/movementsService.c">
 			<Option target="ProjetC"/>
 		</Unit>
-		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/rubiks.c">
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/representationService.c">
 			<Option target="ProjetC"/>
 		</Unit>
-		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/rubiks.h">
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/resolutionService.c">
 			<Option target="ProjetC"/>
 		</Unit>
-		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/typedefs.h">
+		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/rubiks.c">
 			<Option target="ProjetC"/>
 		</Unit>
 		<Unit filename="C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/CMakeLists.txt">

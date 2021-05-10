@@ -2,7 +2,7 @@
 // Created by pmher on 10/05/2021.
 //
 
-#include "representationService.h"
+#include "../Headers/representationService.h"
 
 Square *** create_rubiks(){
     int i,j;

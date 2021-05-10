@@ -1,4 +1,4 @@
-#include "rubiks.h"
+#include "../Headers/rubiks.h"
 
 int main() {
     Square *** rubiks = create_rubiks();

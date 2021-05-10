@@ -142,194 +142,194 @@ ProjetC/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/build
 .PHONY : ProjetC/fast
 
-conio.obj: conio.c.obj
+Services/conio.obj: Services/conio.c.obj
 
-.PHONY : conio.obj
-
-# target to build an object file
-conio.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/conio.c.obj
-.PHONY : conio.c.obj
-
-conio.i: conio.c.i
-
-.PHONY : conio.i
-
-# target to preprocess a source file
-conio.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/conio.c.i
-.PHONY : conio.c.i
-
-conio.s: conio.c.s
-
-.PHONY : conio.s
-
-# target to generate assembly for a file
-conio.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/conio.c.s
-.PHONY : conio.c.s
-
-enumTypesServices.obj: enumTypesServices.c.obj
-
-.PHONY : enumTypesServices.obj
+.PHONY : Services/conio.obj
 
 # target to build an object file
-enumTypesServices.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/enumTypesServices.c.obj
-.PHONY : enumTypesServices.c.obj
+Services/conio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/conio.c.obj
+.PHONY : Services/conio.c.obj
 
-enumTypesServices.i: enumTypesServices.c.i
+Services/conio.i: Services/conio.c.i
 
-.PHONY : enumTypesServices.i
+.PHONY : Services/conio.i
 
 # target to preprocess a source file
-enumTypesServices.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/enumTypesServices.c.i
-.PHONY : enumTypesServices.c.i
+Services/conio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/conio.c.i
+.PHONY : Services/conio.c.i
 
-enumTypesServices.s: enumTypesServices.c.s
+Services/conio.s: Services/conio.c.s
 
-.PHONY : enumTypesServices.s
+.PHONY : Services/conio.s
 
 # target to generate assembly for a file
-enumTypesServices.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/enumTypesServices.c.s
-.PHONY : enumTypesServices.c.s
+Services/conio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/conio.c.s
+.PHONY : Services/conio.c.s
 
-main.obj: main.c.obj
+Services/enumTypesServices.obj: Services/enumTypesServices.c.obj
 
-.PHONY : main.obj
+.PHONY : Services/enumTypesServices.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/main.c.obj
-.PHONY : main.c.obj
+Services/enumTypesServices.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/enumTypesServices.c.obj
+.PHONY : Services/enumTypesServices.c.obj
 
-main.i: main.c.i
+Services/enumTypesServices.i: Services/enumTypesServices.c.i
 
-.PHONY : main.i
+.PHONY : Services/enumTypesServices.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/main.c.i
-.PHONY : main.c.i
+Services/enumTypesServices.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/enumTypesServices.c.i
+.PHONY : Services/enumTypesServices.c.i
 
-main.s: main.c.s
+Services/enumTypesServices.s: Services/enumTypesServices.c.s
 
-.PHONY : main.s
+.PHONY : Services/enumTypesServices.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/main.c.s
-.PHONY : main.c.s
+Services/enumTypesServices.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/enumTypesServices.c.s
+.PHONY : Services/enumTypesServices.c.s
 
-movementsService.obj: movementsService.c.obj
+Services/main.obj: Services/main.c.obj
 
-.PHONY : movementsService.obj
+.PHONY : Services/main.obj
 
 # target to build an object file
-movementsService.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/movementsService.c.obj
-.PHONY : movementsService.c.obj
+Services/main.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/main.c.obj
+.PHONY : Services/main.c.obj
 
-movementsService.i: movementsService.c.i
+Services/main.i: Services/main.c.i
 
-.PHONY : movementsService.i
+.PHONY : Services/main.i
 
 # target to preprocess a source file
-movementsService.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/movementsService.c.i
-.PHONY : movementsService.c.i
+Services/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/main.c.i
+.PHONY : Services/main.c.i
 
-movementsService.s: movementsService.c.s
+Services/main.s: Services/main.c.s
 
-.PHONY : movementsService.s
+.PHONY : Services/main.s
 
 # target to generate assembly for a file
-movementsService.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/movementsService.c.s
-.PHONY : movementsService.c.s
+Services/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/main.c.s
+.PHONY : Services/main.c.s
 
-representationService.obj: representationService.c.obj
+Services/movementsService.obj: Services/movementsService.c.obj
 
-.PHONY : representationService.obj
+.PHONY : Services/movementsService.obj
 
 # target to build an object file
-representationService.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/representationService.c.obj
-.PHONY : representationService.c.obj
+Services/movementsService.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/movementsService.c.obj
+.PHONY : Services/movementsService.c.obj
 
-representationService.i: representationService.c.i
+Services/movementsService.i: Services/movementsService.c.i
 
-.PHONY : representationService.i
+.PHONY : Services/movementsService.i
 
 # target to preprocess a source file
-representationService.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/representationService.c.i
-.PHONY : representationService.c.i
+Services/movementsService.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/movementsService.c.i
+.PHONY : Services/movementsService.c.i
 
-representationService.s: representationService.c.s
+Services/movementsService.s: Services/movementsService.c.s
 
-.PHONY : representationService.s
+.PHONY : Services/movementsService.s
 
 # target to generate assembly for a file
-representationService.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/representationService.c.s
-.PHONY : representationService.c.s
+Services/movementsService.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/movementsService.c.s
+.PHONY : Services/movementsService.c.s
 
-resolutionService.obj: resolutionService.c.obj
+Services/representationService.obj: Services/representationService.c.obj
 
-.PHONY : resolutionService.obj
+.PHONY : Services/representationService.obj
 
 # target to build an object file
-resolutionService.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/resolutionService.c.obj
-.PHONY : resolutionService.c.obj
+Services/representationService.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/representationService.c.obj
+.PHONY : Services/representationService.c.obj
 
-resolutionService.i: resolutionService.c.i
+Services/representationService.i: Services/representationService.c.i
 
-.PHONY : resolutionService.i
+.PHONY : Services/representationService.i
 
 # target to preprocess a source file
-resolutionService.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/resolutionService.c.i
-.PHONY : resolutionService.c.i
+Services/representationService.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/representationService.c.i
+.PHONY : Services/representationService.c.i
 
-resolutionService.s: resolutionService.c.s
+Services/representationService.s: Services/representationService.c.s
 
-.PHONY : resolutionService.s
+.PHONY : Services/representationService.s
 
 # target to generate assembly for a file
-resolutionService.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/resolutionService.c.s
-.PHONY : resolutionService.c.s
+Services/representationService.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/representationService.c.s
+.PHONY : Services/representationService.c.s
 
-rubiks.obj: rubiks.c.obj
+Services/resolutionService.obj: Services/resolutionService.c.obj
 
-.PHONY : rubiks.obj
+.PHONY : Services/resolutionService.obj
 
 # target to build an object file
-rubiks.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/rubiks.c.obj
-.PHONY : rubiks.c.obj
+Services/resolutionService.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/resolutionService.c.obj
+.PHONY : Services/resolutionService.c.obj
 
-rubiks.i: rubiks.c.i
+Services/resolutionService.i: Services/resolutionService.c.i
 
-.PHONY : rubiks.i
+.PHONY : Services/resolutionService.i
 
 # target to preprocess a source file
-rubiks.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/rubiks.c.i
-.PHONY : rubiks.c.i
+Services/resolutionService.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/resolutionService.c.i
+.PHONY : Services/resolutionService.c.i
 
-rubiks.s: rubiks.c.s
+Services/resolutionService.s: Services/resolutionService.c.s
 
-.PHONY : rubiks.s
+.PHONY : Services/resolutionService.s
 
 # target to generate assembly for a file
-rubiks.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/rubiks.c.s
-.PHONY : rubiks.c.s
+Services/resolutionService.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/resolutionService.c.s
+.PHONY : Services/resolutionService.c.s
+
+Services/rubiks.obj: Services/rubiks.c.obj
+
+.PHONY : Services/rubiks.obj
+
+# target to build an object file
+Services/rubiks.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/rubiks.c.obj
+.PHONY : Services/rubiks.c.obj
+
+Services/rubiks.i: Services/rubiks.c.i
+
+.PHONY : Services/rubiks.i
+
+# target to preprocess a source file
+Services/rubiks.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/rubiks.c.i
+.PHONY : Services/rubiks.c.i
+
+Services/rubiks.s: Services/rubiks.c.s
+
+.PHONY : Services/rubiks.s
+
+# target to generate assembly for a file
+Services/rubiks.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetC.dir\build.make CMakeFiles/ProjetC.dir/Services/rubiks.c.s
+.PHONY : Services/rubiks.c.s
 
 # Help Target
 help:
@@ -340,27 +340,27 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... ProjetC
-	@echo ... conio.obj
-	@echo ... conio.i
-	@echo ... conio.s
-	@echo ... enumTypesServices.obj
-	@echo ... enumTypesServices.i
-	@echo ... enumTypesServices.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
-	@echo ... movementsService.obj
-	@echo ... movementsService.i
-	@echo ... movementsService.s
-	@echo ... representationService.obj
-	@echo ... representationService.i
-	@echo ... representationService.s
-	@echo ... resolutionService.obj
-	@echo ... resolutionService.i
-	@echo ... resolutionService.s
-	@echo ... rubiks.obj
-	@echo ... rubiks.i
-	@echo ... rubiks.s
+	@echo ... Services/conio.obj
+	@echo ... Services/conio.i
+	@echo ... Services/conio.s
+	@echo ... Services/enumTypesServices.obj
+	@echo ... Services/enumTypesServices.i
+	@echo ... Services/enumTypesServices.s
+	@echo ... Services/main.obj
+	@echo ... Services/main.i
+	@echo ... Services/main.s
+	@echo ... Services/movementsService.obj
+	@echo ... Services/movementsService.i
+	@echo ... Services/movementsService.s
+	@echo ... Services/representationService.obj
+	@echo ... Services/representationService.i
+	@echo ... Services/representationService.s
+	@echo ... Services/resolutionService.obj
+	@echo ... Services/resolutionService.i
+	@echo ... Services/resolutionService.s
+	@echo ... Services/rubiks.obj
+	@echo ... Services/rubiks.i
+	@echo ... Services/rubiks.s
 .PHONY : help
 
 
