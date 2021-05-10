@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ProjetC.dir/conio.c.obj"
+  "CMakeFiles/ProjetC.dir/enumTypesServices.c.obj"
   "CMakeFiles/ProjetC.dir/main.c.obj"
+  "CMakeFiles/ProjetC.dir/movementsService.c.obj"
+  "CMakeFiles/ProjetC.dir/representationService.c.obj"
+  "CMakeFiles/ProjetC.dir/resolutionService.c.obj"
   "CMakeFiles/ProjetC.dir/rubiks.c.obj"
   "ProjetC.exe"
   "ProjetC.exe.manifest"

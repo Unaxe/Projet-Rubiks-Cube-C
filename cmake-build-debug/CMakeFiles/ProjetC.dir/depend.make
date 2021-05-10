@@ -3,11 +3,47 @@
 
 CMakeFiles/ProjetC.dir/conio.c.obj: ../conio.c
 
+CMakeFiles/ProjetC.dir/enumTypesServices.c.obj: ../conio.h
+CMakeFiles/ProjetC.dir/enumTypesServices.c.obj: ../enumTypesServices.c
+CMakeFiles/ProjetC.dir/enumTypesServices.c.obj: ../enumTypesServices.h
+CMakeFiles/ProjetC.dir/enumTypesServices.c.obj: ../typedefs.h
+
 CMakeFiles/ProjetC.dir/main.c.obj: ../conio.h
+CMakeFiles/ProjetC.dir/main.c.obj: ../enumTypesServices.h
 CMakeFiles/ProjetC.dir/main.c.obj: ../main.c
+CMakeFiles/ProjetC.dir/main.c.obj: ../movementsService.h
+CMakeFiles/ProjetC.dir/main.c.obj: ../representationService.h
+CMakeFiles/ProjetC.dir/main.c.obj: ../resolutionService.h
 CMakeFiles/ProjetC.dir/main.c.obj: ../rubiks.h
+CMakeFiles/ProjetC.dir/main.c.obj: ../typedefs.h
+
+CMakeFiles/ProjetC.dir/movementsService.c.obj: ../conio.h
+CMakeFiles/ProjetC.dir/movementsService.c.obj: ../enumTypesServices.h
+CMakeFiles/ProjetC.dir/movementsService.c.obj: ../movementsService.c
+CMakeFiles/ProjetC.dir/movementsService.c.obj: ../movementsService.h
+CMakeFiles/ProjetC.dir/movementsService.c.obj: ../typedefs.h
+
+CMakeFiles/ProjetC.dir/representationService.c.obj: ../conio.h
+CMakeFiles/ProjetC.dir/representationService.c.obj: ../enumTypesServices.h
+CMakeFiles/ProjetC.dir/representationService.c.obj: ../movementsService.h
+CMakeFiles/ProjetC.dir/representationService.c.obj: ../representationService.c
+CMakeFiles/ProjetC.dir/representationService.c.obj: ../representationService.h
+CMakeFiles/ProjetC.dir/representationService.c.obj: ../typedefs.h
+
+CMakeFiles/ProjetC.dir/resolutionService.c.obj: ../conio.h
+CMakeFiles/ProjetC.dir/resolutionService.c.obj: ../enumTypesServices.h
+CMakeFiles/ProjetC.dir/resolutionService.c.obj: ../movementsService.h
+CMakeFiles/ProjetC.dir/resolutionService.c.obj: ../representationService.h
+CMakeFiles/ProjetC.dir/resolutionService.c.obj: ../resolutionService.c
+CMakeFiles/ProjetC.dir/resolutionService.c.obj: ../resolutionService.h
+CMakeFiles/ProjetC.dir/resolutionService.c.obj: ../typedefs.h
 
 CMakeFiles/ProjetC.dir/rubiks.c.obj: ../conio.h
+CMakeFiles/ProjetC.dir/rubiks.c.obj: ../enumTypesServices.h
+CMakeFiles/ProjetC.dir/rubiks.c.obj: ../movementsService.h
+CMakeFiles/ProjetC.dir/rubiks.c.obj: ../representationService.h
+CMakeFiles/ProjetC.dir/rubiks.c.obj: ../resolutionService.h
 CMakeFiles/ProjetC.dir/rubiks.c.obj: ../rubiks.c
 CMakeFiles/ProjetC.dir/rubiks.c.obj: ../rubiks.h
+CMakeFiles/ProjetC.dir/rubiks.c.obj: ../typedefs.h
 

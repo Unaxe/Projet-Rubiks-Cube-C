@@ -3,11 +3,47 @@
 
 CMakeFiles/ProjetC.dir/conio.c.obj
  C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/conio.c
+CMakeFiles/ProjetC.dir/enumTypesServices.c.obj
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/conio.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/enumTypesServices.c
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/enumTypesServices.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/typedefs.h
 CMakeFiles/ProjetC.dir/main.c.obj
  C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/conio.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/enumTypesServices.h
  C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/main.c
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/movementsService.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/representationService.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/resolutionService.h
  C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/rubiks.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/typedefs.h
+CMakeFiles/ProjetC.dir/movementsService.c.obj
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/conio.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/enumTypesServices.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/movementsService.c
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/movementsService.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/typedefs.h
+CMakeFiles/ProjetC.dir/representationService.c.obj
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/conio.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/enumTypesServices.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/movementsService.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/representationService.c
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/representationService.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/typedefs.h
+CMakeFiles/ProjetC.dir/resolutionService.c.obj
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/conio.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/enumTypesServices.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/movementsService.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/representationService.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/resolutionService.c
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/resolutionService.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/typedefs.h
 CMakeFiles/ProjetC.dir/rubiks.c.obj
  C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/conio.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/enumTypesServices.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/movementsService.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/representationService.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/resolutionService.h
  C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/rubiks.c
  C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/rubiks.h
+ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/typedefs.h

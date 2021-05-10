@@ -115,11 +115,67 @@ CMakeFiles/ProjetC.dir/conio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjetC.dir/conio.c.s"
 	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\conio.c -o CMakeFiles\ProjetC.dir\conio.c.s
 
+CMakeFiles/ProjetC.dir/enumTypesServices.c.obj: CMakeFiles/ProjetC.dir/flags.make
+CMakeFiles/ProjetC.dir/enumTypesServices.c.obj: ../enumTypesServices.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ProjetC.dir/enumTypesServices.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\ProjetC.dir\enumTypesServices.c.obj   -c C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\enumTypesServices.c
+
+CMakeFiles/ProjetC.dir/enumTypesServices.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ProjetC.dir/enumTypesServices.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\enumTypesServices.c > CMakeFiles\ProjetC.dir\enumTypesServices.c.i
+
+CMakeFiles/ProjetC.dir/enumTypesServices.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjetC.dir/enumTypesServices.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\enumTypesServices.c -o CMakeFiles\ProjetC.dir\enumTypesServices.c.s
+
+CMakeFiles/ProjetC.dir/representationService.c.obj: CMakeFiles/ProjetC.dir/flags.make
+CMakeFiles/ProjetC.dir/representationService.c.obj: ../representationService.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/ProjetC.dir/representationService.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\ProjetC.dir\representationService.c.obj   -c C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\representationService.c
+
+CMakeFiles/ProjetC.dir/representationService.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ProjetC.dir/representationService.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\representationService.c > CMakeFiles\ProjetC.dir\representationService.c.i
+
+CMakeFiles/ProjetC.dir/representationService.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjetC.dir/representationService.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\representationService.c -o CMakeFiles\ProjetC.dir\representationService.c.s
+
+CMakeFiles/ProjetC.dir/movementsService.c.obj: CMakeFiles/ProjetC.dir/flags.make
+CMakeFiles/ProjetC.dir/movementsService.c.obj: ../movementsService.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/ProjetC.dir/movementsService.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\ProjetC.dir\movementsService.c.obj   -c C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\movementsService.c
+
+CMakeFiles/ProjetC.dir/movementsService.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ProjetC.dir/movementsService.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\movementsService.c > CMakeFiles\ProjetC.dir\movementsService.c.i
+
+CMakeFiles/ProjetC.dir/movementsService.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjetC.dir/movementsService.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\movementsService.c -o CMakeFiles\ProjetC.dir\movementsService.c.s
+
+CMakeFiles/ProjetC.dir/resolutionService.c.obj: CMakeFiles/ProjetC.dir/flags.make
+CMakeFiles/ProjetC.dir/resolutionService.c.obj: ../resolutionService.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/ProjetC.dir/resolutionService.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\ProjetC.dir\resolutionService.c.obj   -c C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\resolutionService.c
+
+CMakeFiles/ProjetC.dir/resolutionService.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ProjetC.dir/resolutionService.c.i"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\resolutionService.c > CMakeFiles\ProjetC.dir\resolutionService.c.i
+
+CMakeFiles/ProjetC.dir/resolutionService.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjetC.dir/resolutionService.c.s"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\resolutionService.c -o CMakeFiles\ProjetC.dir\resolutionService.c.s
+
 # Object files for target ProjetC
 ProjetC_OBJECTS = \
 "CMakeFiles/ProjetC.dir/main.c.obj" \
 "CMakeFiles/ProjetC.dir/rubiks.c.obj" \
-"CMakeFiles/ProjetC.dir/conio.c.obj"
+"CMakeFiles/ProjetC.dir/conio.c.obj" \
+"CMakeFiles/ProjetC.dir/enumTypesServices.c.obj" \
+"CMakeFiles/ProjetC.dir/representationService.c.obj" \
+"CMakeFiles/ProjetC.dir/movementsService.c.obj" \
+"CMakeFiles/ProjetC.dir/resolutionService.c.obj"
 
 # External object files for target ProjetC
 ProjetC_EXTERNAL_OBJECTS =
@@ -127,11 +183,15 @@ ProjetC_EXTERNAL_OBJECTS =
 ProjetC.exe: CMakeFiles/ProjetC.dir/main.c.obj
 ProjetC.exe: CMakeFiles/ProjetC.dir/rubiks.c.obj
 ProjetC.exe: CMakeFiles/ProjetC.dir/conio.c.obj
+ProjetC.exe: CMakeFiles/ProjetC.dir/enumTypesServices.c.obj
+ProjetC.exe: CMakeFiles/ProjetC.dir/representationService.c.obj
+ProjetC.exe: CMakeFiles/ProjetC.dir/movementsService.c.obj
+ProjetC.exe: CMakeFiles/ProjetC.dir/resolutionService.c.obj
 ProjetC.exe: CMakeFiles/ProjetC.dir/build.make
 ProjetC.exe: CMakeFiles/ProjetC.dir/linklibs.rsp
 ProjetC.exe: CMakeFiles/ProjetC.dir/objects1.rsp
 ProjetC.exe: CMakeFiles/ProjetC.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable ProjetC.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\pmher\Documents\GitHub\projet_C\ProjetC\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable ProjetC.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ProjetC.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
