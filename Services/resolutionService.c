@@ -684,8 +684,6 @@ int Step6(Square **** rubiks){
                 }
 
                 break;
-
-
         }
 
     }

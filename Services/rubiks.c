@@ -5,22 +5,18 @@
 #include "../Headers/rubiks.h"
 
 
-
-
-
-
-
-
-
 void move_menu(Square **** rubiks){
     int choice;
+    //Afficher le menu
     printf("---------------------------------------------------------------------------\n"
            "1.F    2.F'    3.B    4.B'    5.R    6.R'    7.L    8.L'    9.U    10.U'   \n"
            "11.D        12.D'        13.horizontal rotation        14.vertical rotation\n"
            "---------------------------------------------------------------------------\n");
     fflush(stdin);
+    //Demander à l'utilisateur de faire un choix
     scanf("%d",&choice);
     switch (choice) {
+        //en fonction du choix : effectuer l'action correspondante
         case 1 :
             FRONT_clockwise(rubiks,1);
             break;
@@ -73,12 +69,15 @@ void move_menu(Square **** rubiks){
 
 int menu(Square **** rubiks){
     int choice;
+    //Afficher le menu
     printf("---------------------------------------------------------------------------\n"
            "1 : Scramble    2:Reset    3:Blank    4:Play    5:Fill    6:Solve    7:Exit\n"
            "---------------------------------------------------------------------------\n");
     fflush(stdin);
     scanf("%d",&choice);
+    //Demander son choix à l'utilisateur
     switch(choice){
+        //En fonction du choix de l'utilisateur, effectuer l'action souhaitée
         case 1:
             scramble_rubiks(rubiks,100);
             break;
@@ -89,12 +88,14 @@ int menu(Square **** rubiks){
             blank_rubiks(rubiks);
             break;
         case 4:
+            //renvoie vers le menu de mouvement
             move_menu(rubiks);
             break;
         case 5:
             //fillRubiks
             break;
         case 6:
+            //Si l'action est déjà validée, passer à la suivante
             if (Step1(rubiks))
                 if (Step2(rubiks))
                     if(Step3(rubiks))

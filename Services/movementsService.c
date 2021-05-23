@@ -16,6 +16,7 @@ void FRONT_clockwise(Square **** rubiks,int type){
     F = side_to_index('F', *rubiks);
 
     for (cpt = 0;cpt<type;cpt++){
+        //Effectuer la rotation des faces autour de la face a tourner
         for (i = 0; i < 3; i++) {
             stock = (*rubiks)[D][0][2 - i].color; // stocker la valeur de la case D[0][2]
             (*rubiks)[D][0][2 - i].color = (*rubiks)[R][0 + i][0].color;
@@ -25,6 +26,7 @@ void FRONT_clockwise(Square **** rubiks,int type){
             (*rubiks)[U][2][0 + i].color = stock2;
             (*rubiks)[R][0 + i][0].color = stock;
         }
+        //Faire faire un quart de tour de la face a tourner
         exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][0][2]));
         exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][2][2]));
         exchangeColors(&((*rubiks)[F][0][0]), &((*rubiks)[F][2][0]));
@@ -35,7 +37,7 @@ void FRONT_clockwise(Square **** rubiks,int type){
     if (DEBUG_MOVEMENTS)
         printf("Front-Clockwise-%d\n",type);
 }
-
+//meme procédure que pour le front
 void UP_clockwise(Square **** rubiks,int type){
     int stock,stock2,i,cpt;
     int B,R,L,U,F;
@@ -66,6 +68,7 @@ void UP_clockwise(Square **** rubiks,int type){
         printf("Up-Clockwise-%d\n",type);
 }
 
+//meme procédure que pour le front
 void BACK_clockwise(Square **** rubiks,int type) {
     int stock, stock2, i,cpt;
     int B, R, L, U, D;
@@ -96,6 +99,7 @@ void BACK_clockwise(Square **** rubiks,int type) {
         printf("Back-Clockwise-%d\n",type);
 }
 
+//meme procédure que pour le front
 void DOWN_clockwise(Square **** rubiks,int type) {
     int stock,stock2,i,cpt;
     // Rotation du premier groupe de carrés
@@ -127,6 +131,7 @@ void DOWN_clockwise(Square **** rubiks,int type) {
         printf("Down-Clockwise-%d\n",type);
 }
 
+//meme procédure que pour le front
 void RIGHT_clockwise(Square **** rubiks,int type) {
     int stock,stock2,i,cpt;
     // Rotation du premier groupe de carrés
@@ -158,6 +163,7 @@ void RIGHT_clockwise(Square **** rubiks,int type) {
         printf("Right-Clockwise-%d\n",type);
 }
 
+//meme procédure que pour le front
 void LEFT_clockwise(Square **** rubiks,int type){
     int stock,stock2,i,cpt;
     // Rotation du premier groupe de carrés
@@ -189,6 +195,7 @@ void LEFT_clockwise(Square **** rubiks,int type){
         printf("Left-Clockwise-%d\n",type);
 }
 
+//meme procédure que pour le le clockwise mais dans l'autre sens
 void FRONT_anticlockwise(Square **** rubiks,int type){
     int stock,stock2,i,cpt;
     // Rotation du premier groupe de carrés
@@ -220,6 +227,7 @@ void FRONT_anticlockwise(Square **** rubiks,int type){
         printf("Front-Anti-Clockwise-%d\n",type);
 }
 
+//meme procédure que pour le front
 void BACK_anticlockwise(Square **** rubiks,int type){
     int stock,stock2,i,cpt;
     // Rotation du premier groupe de carrés
@@ -251,6 +259,7 @@ void BACK_anticlockwise(Square **** rubiks,int type){
         printf("Back-Anti-Clockwise-%d\n",type);
 }
 
+//meme procédure que pour le front
 void UP_anticlockwise(Square **** rubiks,int type){
     int stock,stock2,i,cpt;
     // Rotation du premier groupe de carrés
@@ -282,6 +291,7 @@ void UP_anticlockwise(Square **** rubiks,int type){
         printf("Up-Anti-Clockwise-%d\n",type);
 }
 
+//meme procédure que pour le front
 void DOWN_anticlockwise(Square **** rubiks,int type){
     int stock,stock2,i,cpt;
     // Rotation du premier groupe de carrés
@@ -313,6 +323,7 @@ void DOWN_anticlockwise(Square **** rubiks,int type){
         printf("Down-Anti-Clockwise-%d\n",type);
 }
 
+//meme procédure que pour le front
 void RIGHT_anticlockwise(Square **** rubiks,int type){
     int stock,stock2,i,cpt;
     // Rotation du premier groupe de carrés
@@ -344,6 +355,7 @@ void RIGHT_anticlockwise(Square **** rubiks,int type){
         printf("Right-Anti-Clockwise-%d\n",type);
 }
 
+//meme procédure que pour le front
 void LEFT_anticlockwise(Square **** rubiks,int type){
     int stock,stock2,i,cpt;
     // Rotation du premier groupe de carrés
@@ -376,6 +388,7 @@ void LEFT_anticlockwise(Square **** rubiks,int type){
 }
 
 void reverseFace(Square *** Face){
+    //Faire faire un demi tour à la face souhaitée
     exchangeColors(&((*Face)[0][0]), &((*Face)[2][2]));
     exchangeColors(&((*Face)[0][1]), &((*Face)[2][1]));
     exchangeColors(&((*Face)[0][2]), &((*Face)[2][0]));
@@ -391,24 +404,32 @@ void horizontal_rotation(Square **** rubiks){
     F = side_to_index('F', *rubiks);
     R = side_to_index('R', *rubiks);
 
+    //inverser les faces haut et bas
     reverseFace(&((*rubiks)[U]));
     reverseFace(&((*rubiks)[D]));
 
+    //La face Front devient la face back
     for(i = 0;i<3;i++){
         for(j=0;j<3;j++){
             (*rubiks)[F][i][j].side = BACK;
         }
     }
+
+    //La face Back devient la face Front
     for(i = 0;i<3;i++){
         for(j=0;j<3;j++){
             (*rubiks)[B][i][j].side = FRONT;
         }
     }
+
+    //La face Left devient la face Right
     for(i = 0;i<3;i++){
         for(j=0;j<3;j++){
             (*rubiks)[L][i][j].side = RIGHT;
         }
     }
+
+    //La face Right devient la face Left
     for(i = 0;i<3;i++){
         for(j=0;j<3;j++){
             (*rubiks)[R][i][j].side = LEFT;
@@ -427,30 +448,31 @@ void vertical_rotation(Square **** rubiks){
     F = side_to_index('F', *rubiks);
     R = side_to_index('R', *rubiks);
 
+    //inverser les faces Back,Front,Left,Right
     reverseFace(&((*rubiks)[B]));
     reverseFace(&((*rubiks)[F]));
     reverseFace(&((*rubiks)[L]));
     reverseFace(&((*rubiks)[R]));
 
+    //Down->UP
     for(i = 0;i<3;i++){
         for(j=0;j<3;j++){
             (*rubiks)[D][i][j].side = UP;
         }
     }
-
+    //Up->Down
     for(i = 0;i<3;i++){
         for(j=0;j<3;j++){
             (*rubiks)[U][i][j].side = DOWN;
         }
     }
-
-
+    //Front->Back
     for(i = 0;i<3;i++){
         for(j=0;j<3;j++){
             (*rubiks)[F][i][j].side = BACK;
         }
     }
-
+    //Back->Front
     for(i = 0;i<3;i++){
         for(j=0;j<3;j++){
             (*rubiks)[B][i][j].side = FRONT;
@@ -463,8 +485,11 @@ void vertical_rotation(Square **** rubiks){
 
 void exchangeColors(Square * first,Square * second){
     int stock;
+    //Stocker la premiere couleur
     stock = first->color;
+    //la premiere couleur devient la deuxieme
     first->color = second->color;
+    //La deuxieme devient la premiere
     second->color = stock;
 }
 
@@ -516,6 +541,7 @@ void quarterTurnRight(Square **** rubiks){
 }
 
 void editFaces(int* D,int* B,int* L,int* U,int* F,int* R,Square *** rubiks){
+    //Initialiser les variables D,B,L,U,F,R avec les indices des faces Down,Back,Left,Up,Front et Right dans le tableau rubiks
     (*D) = side_to_index('D', rubiks);
     (*B) = side_to_index('B', rubiks);
     (*L) = side_to_index('L', rubiks);

@@ -26,6 +26,7 @@ int side_to_index(char side,Square *** rubiks){
     T_SIDE searched;
     int i;
     switch (side) {
+        //choisir la face a chercher en fonction de l'entrée de l'utilisateur
         case 'F':
             searched = FRONT;
             break;
@@ -45,8 +46,10 @@ int side_to_index(char side,Square *** rubiks){
             searched = LEFT;
             break;
     }
+    //Tant que la face de la case est différent de la face cherchée, changer de face
     for(i = 0; i< 6;i++){
         if(rubiks[i][0][0].side == searched)
+            //Dans le cas ou ça correspond, renvoier l'indice
             return i;
     }
 }
