@@ -28,7 +28,7 @@ typedef struct {
     T_SIDE side;
     T_COLOR color;
 } Square;
-#define DEBUG_MOVEMENTS 1
+#define DEBUG_MOVEMENTS 0
 
 
 #endif //RUBIKS_C_TYPEDEFS_H

@@ -22,6 +22,14 @@ C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/enumTypesServices.h
 movementsService.h
 C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/movementsService.h
 
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/resolutionService.h
+representationService.h
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/representationService.h
+
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/rubiks.h
+resolutionService.h
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/resolutionService.h
+
 C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/typedefs.h
 stdlib.h
 -
@@ -32,7 +40,27 @@ time.h
 conio.h
 C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/conio.h
 
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/enumTypesServices.c
+../Headers/enumTypesServices.h
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/enumTypesServices.h
+
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/main.c
+../Headers/rubiks.h
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/rubiks.h
+
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/movementsService.c
+../Headers/movementsService.h
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/movementsService.h
+
 C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/representationService.c
 ../Headers/representationService.h
 C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/representationService.h
+
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/resolutionService.c
+../Headers/resolutionService.h
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/resolutionService.h
+
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Services/rubiks.c
+../Headers/rubiks.h
+C:/Users/pmher/Documents/GitHub/projet_C/ProjetC/Headers/rubiks.h
 
