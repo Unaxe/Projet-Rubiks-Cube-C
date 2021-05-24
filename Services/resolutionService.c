@@ -17,9 +17,9 @@ int Step1(Square **** rubiks){
     while(((*rubiks)[U][0][1].color != W || ((*rubiks)[B][0][1].color != (*rubiks)[B][1][1].color)) || ((*rubiks)[U][1][2].color != W || ((*rubiks)[R][0][1].color != (*rubiks)[R][1][1].color)) || ((*rubiks)[U][1][0].color != W || ((*rubiks)[L][0][1].color != (*rubiks)[L][1][1].color)) || ((*rubiks)[U][2][1].color != W || ((*rubiks)[F][0][1].color != (*rubiks)[F][1][1].color))   ) {
         cpt ++;
         if (cpt>= 1000) {
-            scramble_rubiks(rubiks,15);
-            cpt = 0;
-            printf("rerolled\n");
+            display_rubiks(*rubiks);
+            printf("Indeterminate choice, please makes some actions to help the algorith to resolve :\n");
+            return 0;
         }
 
         if ((*rubiks)[U][1][1].color == Y) {
@@ -223,7 +223,7 @@ int Step1(Square **** rubiks){
 }
 
 int Step2(Square **** rubiks){
-    int D,B,L,U,F,R,i,j,bol,cpt,z;
+    int D,B,L,U,F,R,i,j,bol,cpt,z,try=0;
     editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
     if ((*rubiks)[U][1][1].color == Y) {
         vertical_rotation(rubiks);
@@ -234,7 +234,12 @@ int Step2(Square **** rubiks){
         return 1;
 
     while((*rubiks)[U][0][0].color != W || (*rubiks)[U][0][1].color != W || (*rubiks)[U][0][2].color != W || (*rubiks)[U][1][0].color != W || (*rubiks)[U][1][1].color != W || (*rubiks)[U][1][2].color != W || (*rubiks)[U][2][0].color != W || (*rubiks)[U][2][1].color != W || (*rubiks)[U][2][2].color != W || !((*rubiks)[F][0][0].color == (*rubiks)[F][1][1].color && (*rubiks)[F][0][1].color == (*rubiks)[F][1][1].color && (*rubiks)[F][0][2].color == (*rubiks)[F][1][1].color && (*rubiks)[R][0][0].color == (*rubiks)[R][1][1].color && (*rubiks)[R][0][1].color == (*rubiks)[R][1][1].color && (*rubiks)[R][0][2].color == (*rubiks)[R][1][1].color && (*rubiks)[B][0][0].color == (*rubiks)[B][1][1].color && (*rubiks)[B][0][1].color == (*rubiks)[B][1][1].color && (*rubiks)[B][0][2].color == (*rubiks)[B][1][1].color && (*rubiks)[L][0][0].color == (*rubiks)[L][1][1].color && (*rubiks)[L][0][1].color == (*rubiks)[L][1][1].color && (*rubiks)[L][0][2].color == (*rubiks)[L][1][1].color)) {
-
+        try++;
+        if (try>= 1000) {
+            display_rubiks(*rubiks);
+            printf("Indeterminate choice, please makes some actions to help the algorith to resolve :\n");
+            return 0;
+        }
 
         //dans le cas ou le coin est originellement en bas à droite
         for(z = 0;z<4;z++){
@@ -275,7 +280,7 @@ int Step2(Square **** rubiks){
 }
 
 int Step3(Square **** rubiks){
-    int D,B,L,U,F,R,i,j,bol,cpt,z;
+    int D,B,L,U,F,R,i,j,bol,cpt,z,try = 0;
     editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
     if ((*rubiks)[U][1][1].color == W) {
         vertical_rotation(rubiks);
@@ -286,8 +291,12 @@ int Step3(Square **** rubiks){
         return 1;
 
     while((*rubiks)[F][1][0].color!=(*rubiks)[F][1][1].color || (*rubiks)[F][1][2].color!=(*rubiks)[F][1][1].color || (*rubiks)[R][1][0].color!=(*rubiks)[R][1][1].color || (*rubiks)[R][1][2].color!=(*rubiks)[R][1][1].color || (*rubiks)[B][1][0].color!=(*rubiks)[B][1][1].color || (*rubiks)[B][1][2].color!=(*rubiks)[B][1][1].color || (*rubiks)[L][1][0].color!=(*rubiks)[L][1][1].color || (*rubiks)[L][1][2].color!=(*rubiks)[L][1][1].color){
-
-
+        try ++;
+        if (try>= 1000) {
+            display_rubiks(*rubiks);
+            printf("Indeterminate choice, please makes some actions to help the algorith to resolve :\n");
+            return 0;
+        }
         for(z = 0;z<4;z++){
             if((*rubiks)[F][0][1].color == (*rubiks)[F][1][1].color && (*rubiks)[U][2][1].color != Y){
                 if((*rubiks)[U][2][1].color == (*rubiks)[R][1][1].color){
@@ -370,13 +379,20 @@ int Step3(Square **** rubiks){
 }
 
 int Step4(Square **** rubiks){
-    int D,B,L,U,F,R,i,cpt = 0,z,bol;
+    int D,B,L,U,F,R,i,cpt = 0,z,bol,try=0;
     editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
     if(!((*rubiks)[U][0][1].color != Y || (*rubiks)[U][1][0].color != Y || (*rubiks)[U][1][2].color != Y || (*rubiks)[U][2][1].color != Y || (*rubiks)[F][0][1].color != (*rubiks)[F][1][1].color || (*rubiks)[R][0][1].color != (*rubiks)[R][1][1].color || (*rubiks)[B][0][1].color != (*rubiks)[B][1][1].color || (*rubiks)[L][0][1].color != (*rubiks)[L][1][1].color))
         return 1;
 
 
     while((*rubiks)[U][0][1].color != Y || (*rubiks)[U][1][0].color != Y || (*rubiks)[U][1][2].color != Y || (*rubiks)[U][2][1].color != Y || (*rubiks)[F][0][1].color != (*rubiks)[F][1][1].color || (*rubiks)[R][0][1].color != (*rubiks)[R][1][1].color || (*rubiks)[B][0][1].color != (*rubiks)[B][1][1].color || (*rubiks)[L][0][1].color != (*rubiks)[L][1][1].color){
+        try ++;
+        if (try>= 1000) {
+            display_rubiks(*rubiks);
+            printf("Indeterminate choice, please makes some actions to help the algorith to resolve :\n");
+            return 0;
+        }
+
         //compter le nombre de cubes de la croix bien placés
         cpt = 0;
         for(i = 1;i<8; i+=2){
@@ -493,7 +509,7 @@ int Step4(Square **** rubiks){
 }
 
 int Step5(Square **** rubiks){
-    int D,B,L,U,F,R,i,cpt = 0,z,bol;
+    int D,B,L,U,F,R,i,cpt = 0,z,bol,try = 0;
     editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
 
     for(z = 0;z<4;z++){
@@ -509,6 +525,12 @@ int Step5(Square **** rubiks){
         return 1;
 
     while(cpt != 4){
+        try ++;
+        if (try>= 1000) {
+            display_rubiks(*rubiks);
+            printf("Indeterminate choice, please makes some actions to help the algorith to resolve :\n");
+            return 0;
+        }
         cpt = 0;
         for(z = 0;z<4;z++){
             if(((*rubiks)[F][1][1].color == (*rubiks)[F][0][0].color || (*rubiks)[F][1][1].color == (*rubiks)[L][0][2].color || (*rubiks)[F][1][1].color == (*rubiks)[U][2][0].color  )
@@ -585,7 +607,7 @@ int Step5(Square **** rubiks){
 }
 
 int Step6(Square **** rubiks){
-    int D,B,L,U,F,R,i,cpt = 0,z,bol;
+    int D,B,L,U,F,R,i,cpt = 0,z,bol,try = 0;
     editFaces(&D,&B,&L,&U,&F,&R,*rubiks);
 
     if((*rubiks)[U][0][0].color == Y && (*rubiks)[U][0][2].color == Y && (*rubiks)[U][2][0].color == Y && (*rubiks)[U][2][2].color == Y)
@@ -593,6 +615,13 @@ int Step6(Square **** rubiks){
 
 
     while((*rubiks)[U][0][0].color != Y || (*rubiks)[U][0][2].color != Y || (*rubiks)[U][2][0].color != Y || (*rubiks)[U][2][2].color != Y){
+        try ++;
+        if (try>= 1000) {
+            display_rubiks(*rubiks);
+            printf("Indeterminate choice, please makes some actions to help the algorith to resolve :\n");
+            return 0;
+        }
+
         cpt = 0;
         if((*rubiks)[U][0][0].color == Y)
             cpt++;
