@@ -3,7 +3,7 @@
 //
 
 #include "../Headers/enumTypesServices.h"
-int select_color(char color){
+T_COLOR select_color(char color){
     switch(color) {
         case 'R' :
             return R;

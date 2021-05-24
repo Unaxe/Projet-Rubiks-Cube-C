@@ -6,7 +6,7 @@
 #define RUBIKS_C_ENUMTYPESSERVICES_H
 #include "typedefs.h"
 
-int select_color(char color);
+T_COLOR select_color(char color);
 int side_to_index(char side,Square *** rubiks);
 
 

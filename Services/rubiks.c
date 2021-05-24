@@ -97,6 +97,7 @@ int menu(Square **** rubiks){
             break;
         case 5:
             //fillRubiks
+            fill_rubiks(rubiks);
             break;
         case 6:
             //Si l'action est déjà validée, passer à la suivante

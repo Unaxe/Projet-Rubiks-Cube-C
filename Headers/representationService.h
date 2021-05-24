@@ -14,7 +14,7 @@ void free_rubiks(Square **** rubiks);
 void color_display(int color);
 void blank_rubiks(Square **** rubiks);
 void scramble_rubiks(Square **** rubiks,int numb);
-
+void fill_rubiks(Square ****rubiks);
 
 
 #endif //RUBIKS_C_REPRESENTATIONSERVICE_H

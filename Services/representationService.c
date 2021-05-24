@@ -45,6 +45,57 @@ void init_rubiks(Square **** rubiks){
     }
 }
 
+void fill_rubiks(Square ****rubiks){
+    int cpt = 0;
+    int i,j,k;
+    int used[6] = {0};
+    char face = '\0',color = '\0';
+    T_COLOR c;
+    for(i = 0;i<6;i++){
+        for(j = 0;j<3;j++){
+            for(k = 0;k<3;k++){
+                if((*rubiks)[i][j][k].color!=LG){
+                    cpt++;
+                    used[(*rubiks)[i][j][k].color]++;
+                }
+            }
+        }
+    }
+    while(cpt<54) {
+        printf("Enter the face to fill :\n");
+        fflush(stdin);
+        scanf("%c", &face);
+        i = side_to_index(face, *rubiks);
+        do{
+            printf("Enter the line :\n");
+            fflush(stdin);
+            scanf("%d", &j);
+            j--;
+        }while (j<0||j>2);
+        do{
+            printf("Enter the column :\n");
+            fflush(stdin);
+            scanf("%d", &k);
+            k--;
+        }while(k<0||k>2);
+        printf("Enter the color :\n");
+        fflush(stdin);
+        scanf("%c", &color);
+        if ((*rubiks)[i][j][k].color == LG)
+            cpt++;
+        else {
+            used[(*rubiks)[i][j][k].color]--;
+        }
+        c = select_color(color);
+        if (used[c] < 9) {
+            used[c]++;
+            (*rubiks)[i][j][k].color = c;
+            display_rubiks(*rubiks);
+        } else
+            printf("This color is actualy fully used \n");
+    }
+}
+
 void color_display(int color){
     //Afficher en couleur
     switch (color) {
